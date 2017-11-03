@@ -1,348 +1,248 @@
 
- <!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="瞎写写，瞎看看。">
     <title>hexo 部署的几个大坑 | kabulu | 杂食堆</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="卡布鲁司机">
-    
-    <meta name="description" content="填坑填坑，简直是累的要死
-部署到github上命名问题
-github的repo命名一定要以你的github的用户名.github.io创建。如果是其他的名字都会404报错
-其实并不是没有部署成功，而是实际路径会很麻烦。
 
-中心极限定理如果一个事物受到多种因素的影响，不管每个因素本身是什么分布，它们加">
-    
-    
-    
-    
-    <link rel="alternative" href="/Tinnypp/atom.xml" title="kabulu | 杂食堆" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/myLogo.png">
-    <link rel="apple-touch-icon-precomposed" href="/img/myLogo.png">
-    
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x586B;&amp;#x5751;&amp;#x586B;&amp;#x5751;&amp;#xFF0C;&amp;#x7B80;&amp;#x76F4;&amp;#x662F;&amp;#x7D2F;&amp;#x7684;&amp;#x8981;&amp;#x6B7B; &amp;#x90E8;&amp;#x7F72;&amp;#x5230;github&amp;#x4E0A;&amp;#x547D;&amp;#x540D;&amp;#x95EE;&amp;#x9898; github&amp;#x7684;repo&amp;#x547D;&amp;#x540">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 部署的几个大坑">
+<meta property="og:url" content="http://yoursite.com/2017/11/03/hexo-config/index.html">
+<meta property="og:site_name" content="kabulu | 杂食堆">
+<meta property="og:description" content="&amp;#x586B;&amp;#x5751;&amp;#x586B;&amp;#x5751;&amp;#xFF0C;&amp;#x7B80;&amp;#x76F4;&amp;#x662F;&amp;#x7D2F;&amp;#x7684;&amp;#x8981;&amp;#x6B7B; &amp;#x90E8;&amp;#x7F72;&amp;#x5230;github&amp;#x4E0A;&amp;#x547D;&amp;#x540D;&amp;#x95EE;&amp;#x9898; github&amp;#x7684;repo&amp;#x547D;&amp;#x540">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-03T10:51:54.005Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo 部署的几个大坑">
+<meta name="twitter:description" content="&amp;#x586B;&amp;#x5751;&amp;#x586B;&amp;#x5751;&amp;#xFF0C;&amp;#x7B80;&amp;#x76F4;&amp;#x662F;&amp;#x7D2F;&amp;#x7684;&amp;#x8981;&amp;#x6B7B; &amp;#x90E8;&amp;#x7F72;&amp;#x5230;github&amp;#x4E0A;&amp;#x547D;&amp;#x540D;&amp;#x95EE;&amp;#x9898; github&amp;#x7684;repo&amp;#x547D;&amp;#x540">
 
-  
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    
-  
-
-    <link rel="stylesheet" href="/css/style.css">
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "卡布鲁司机",
+  "url": "http://yoursite.com"
+}
+</script>
     <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-      <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
-
-  _st('install','.............Add your swiftype userID...............');
-</script>
-</head>
-
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="kabulu | 杂食堆">kabulu | 杂食堆</a></h1>
-				<h2 class="blog-motto">in me the tiger sniff the rose</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-                    <ul>
-					 
-						<li><a href="/Tinnypp">首页</a></li>
-					
-						<li><a href="/Tinnypp/archives">归档</a></li>
-					
-					<li>
-					
-						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
-						</form>
-					
-					</li>
-                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
-
-				</ul>
-			</nav>	
-</div>
-    </header>
-    <div id="container" class="clearfix">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+    var algoliaEnabled = false;
     
-      <a href="/2017/11/03/hexo-config/" title="hexo 部署的几个大坑" itemprop="url">hexo 部署的几个大坑</a>
-  </h1>
-  <p class="article-time">
-    <time datetime="2017-11-03T10:45:14.344Z" itemprop="datePublished">2017年 11月 3日</time>
-  </p>
-</header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到github上命名问题"><span class="toc-number">1.</span> <span class="toc-text">部署到github上命名问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中心极限定理"><span class="toc-number">2.</span> <span class="toc-text">中心极限定理</span></a></li></ol>
-		</div>
-		
-		<p>填坑填坑，简直是累的要死</p>
-<h3 id="部署到github上命名问题"><a href="#部署到github上命名问题" class="headerlink" title="部署到github上命名问题"></a>部署到github上命名问题</h3><ul>
-<li>github的repo命名一定要以<code>你的github的用户名.github.io</code>创建。如果是其他的名字都会404报错</li>
-<li>其实并不是没有部署成功，而是实际路径会很麻烦。</li>
-</ul>
-<h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><p>如果一个事物受到多种因素的影响，不管每个因素本身是什么分布，它们加总后，结果的平均值就是正态分布（normal distribution）。<br>ps:这些因素不能使互相叠加的。必须是相互独立，互不干扰。</p>
-<p>财富的分配就是因为各个因素具有相互叠加作用。会互相加强影响。一般呈现对数正太分布(log normal distribution)</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
+</script>
 
+    
 
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2017/11/03/hexo-config/" data-title="hexo 部署的几个大坑 | kabulu | 杂食堆" data-tsina="" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
-
-<div class="next">
-<a href="/2017/11/03/hello-world/"  title="Hello World">
- <strong>旧一篇:</strong><br/> 
- <span>Hello World
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-<section class="comment">
-	
-	<div class="ds-thread" data-title="hexo 部署的几个大坑" data-thread-key="hexo-config" data-author-key="卡布鲁司机" data-url="http://yoursite.com/post/hexo-config"></div>
-	
-</section>
-
-
-</div>  
-    </div>
-    <footer><div id="footer" >
-	<div class="copyright">
-		<span>Powered by <a href="https://github.com/hexojs/hexo">Hexo</a> and theme by 
-		<a href="https://github.com/levonlin/Tinnypp">Tinnypp</a>.</span>
-		
-			<span>© Levon</span>
-		
-	<div>
-</div></footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  //back to top
-  function backToTop(){
-    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
-    buttonHTML.appendTo($("body"));
-    var buttonToTop = $("#back-top");
-    // hide #back-top first
-    buttonToTop.hide();
-
-    // fade in #back-top
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                buttonToTop.fadeIn();
-            } else {
-                buttonToTop.fadeOut();
-            }
-        });
-        // scroll body to 0px on click
-        buttonToTop.click(function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-    });
-  }
-  backToTop();
-
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      ta = $('#toc.toc-aside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
+    
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
         
-    }
-  });
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  var show = true;
-  c.click(function(){
-    if(show == true){
-        a.addClass('fadeOut').css('display', 'none');
-        ta.css('display', 'block').addClass('fadeIn');
-        m.addClass('moveMain');  
-    }else{
-        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
-        ta.css('display', 'none'); 
-        m.removeClass('moveMain');
-        $('#toc.toc-aside').css('display', 'none');
-    }
-    show = !show;
-  });
-});
-</script>
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
 
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,240-$(this).scrollTop()));
-    });
-  };
-});
-</script>
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
 
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>kabulu | 杂食堆</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">卡布鲁司机</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"tinnypp"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-hexo-config" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    hexo 部署的几个大坑
+</h1>
 
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
+                <div class="article-inner">
 
-<script type="text/javascript">
-  function footerPosition() {
-    var contentHeight = document.documentElement.scrollHeight,
-        winHeight = window.innerHeight;
-    if(contentHeight <= winHeight) {
-      $('footer').addClass('fixed-bottom');
-    } else {
-      $('footer').removeClass('fixed-bottom');
-    }
-  }
-  footerPosition();
-  $(window).resize(footerPosition);
-</script>
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>&#x586B;&#x5751;&#x586B;&#x5751;&#xFF0C;&#x7B80;&#x76F4;&#x662F;&#x7D2F;&#x7684;&#x8981;&#x6B7B;</p>
+<h3 id="&#x90E8;&#x7F72;&#x5230;github&#x4E0A;&#x547D;&#x540D;&#x95EE;&#x9898;"><a href="#&#x90E8;&#x7F72;&#x5230;github&#x4E0A;&#x547D;&#x540D;&#x95EE;&#x9898;" class="headerlink" title="&#x90E8;&#x7F72;&#x5230;github&#x4E0A;&#x547D;&#x540D;&#x95EE;&#x9898;"></a>&#x90E8;&#x7F72;&#x5230;github&#x4E0A;&#x547D;&#x540D;&#x95EE;&#x9898;</h3><ul class="ui list">
+<li>github&#x7684;repo&#x547D;&#x540D;&#x4E00;&#x5B9A;&#x8981;&#x4EE5;<code>&#x4F60;&#x7684;github&#x7684;&#x7528;&#x6237;&#x540D;.github.io</code>&#x521B;&#x5EFA;&#x3002;&#x5982;&#x679C;&#x662F;&#x5176;&#x4ED6;&#x7684;&#x540D;&#x5B57;&#x90FD;&#x4F1A;404&#x62A5;&#x9519;</li>
+<li>&#x5176;&#x5B9E;&#x5E76;&#x4E0D;&#x662F;&#x6CA1;&#x6709;&#x90E8;&#x7F72;&#x6210;&#x529F;&#xFF0C;&#x800C;&#x662F;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;&#x4F1A;&#x5F88;&#x9EBB;&#x70E6;&#x3002;</li>
+</ul>
+<h3 id="&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;"><a href="#&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;" class="headerlink" title="&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;"></a>&#x4E2D;&#x5FC3;&#x6781;&#x9650;&#x5B9A;&#x7406;</h3><p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4E8B;&#x7269;&#x53D7;&#x5230;&#x591A;&#x79CD;&#x56E0;&#x7D20;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x4E0D;&#x7BA1;&#x6BCF;&#x4E2A;&#x56E0;&#x7D20;&#x672C;&#x8EAB;&#x662F;&#x4EC0;&#x4E48;&#x5206;&#x5E03;&#xFF0C;&#x5B83;&#x4EEC;&#x52A0;&#x603B;&#x540E;&#xFF0C;&#x7ED3;&#x679C;&#x7684;&#x5E73;&#x5747;&#x503C;&#x5C31;&#x662F;&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF08;normal distribution&#xFF09;&#x3002;<br>ps:&#x8FD9;&#x4E9B;&#x56E0;&#x7D20;&#x4E0D;&#x80FD;&#x4F7F;&#x4E92;&#x76F8;&#x53E0;&#x52A0;&#x7684;&#x3002;&#x5FC5;&#x987B;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#xFF0C;&#x4E92;&#x4E0D;&#x5E72;&#x6270;&#x3002;</p>
+<p>&#x8D22;&#x5BCC;&#x7684;&#x5206;&#x914D;&#x5C31;&#x662F;&#x56E0;&#x4E3A;&#x5404;&#x4E2A;&#x56E0;&#x7D20;&#x5177;&#x6709;&#x76F8;&#x4E92;&#x53E0;&#x52A0;&#x4F5C;&#x7528;&#x3002;&#x4F1A;&#x4E92;&#x76F8;&#x52A0;&#x5F3A;&#x5F71;&#x54CD;&#x3002;&#x4E00;&#x822C;&#x5448;&#x73B0;&#x5BF9;&#x6570;&#x6B63;&#x592A;&#x5206;&#x5E03;(log normal distribution)</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-11-03T10:45:14.344Z" itemprop="datePublished">2017年 11月 3日</time>
+
+    </span>
+    <span class="post-description-item">
+        
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/11/03/hello-world/" class="ui tiny button">
+                    
+                    Hello World
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#部署到github上命名问题"><span>部署到github上命名问题</span></a></li><li><a href="#中心极限定理"><span>中心极限定理</span></a></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
 
 
-  </body>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">卡布鲁司机</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/js/semantic-ui-algolia.js"></script>
+
+<script src="/js/aloha-events.js"></script>
+
+
+
+</body>
 </html>
