@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,9 +96,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -262,6 +262,309 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/hexo-2017-11-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="卡布鲁司机">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kabulu | 杂食堆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/07/hexo-2017-11-7/" itemprop="url">关于hexo无法上传到github 的解决办法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T23:43:33+08:00">
+                2017年 11月 7日
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="现象描述："><a href="#现象描述：" class="headerlink" title="现象描述："></a>现象描述：</h3><p>hexo d 后 提示github配置出现了问题。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ hexo d</div><div class="line">INFO Deploying: git</div><div class="line">INFO Clearing .deploy folder...</div><div class="line"></div><div class="line">...</div><div class="line">...</div><div class="line">...</div><div class="line">...</div><div class="line"></div><div class="line">bash: /dev/tty: No such device or address</div><div class="line">error: failed to execute prompt script (exit code 1)</div><div class="line">fatal: could not read Username for &apos;https://github.com&apos;: No error</div><div class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Error: bash: /dev/tty: No such device or address</div><div class="line">error: failed to execute prompt script (exit code 1)</div><div class="line">fatal: could not read Username for &apos;https://github.com&apos;: No error</div></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>将<code>_config.yml</code>中的<code>repository:https://github.com/abc/abc.github.io.git</code>这个地址改为<code>git@github.com:abc/abc.github.io.git</code> 即可</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/markedown-2017-11-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="卡布鲁司机">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kabulu | 杂食堆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/07/markedown-2017-11-7/" itemprop="url">Markdown 语法 汇总 (马克飞象)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T23:41:08+08:00">
+                2017年 11月 7日
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">Markdown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>马克飞象</strong>是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验。特点概述：</p>
+<ul>
+<li><strong>功能丰富</strong> ：支持高亮代码块、<em>LaTeX</em> 公式、流程图，本地图片以及附件上传，甚至截图粘贴，工作学习好帮手；</li>
+<li><strong>得心应手</strong> ：简洁高效的编辑器，提供<a href="http://maxiang.info/client_zh" target="_blank" rel="external">桌面客户端</a>以及<a href="https://chrome.google.com/webstore/detail/kidnkfckhbdkfgbicccmdggmpgogehop" target="_blank" rel="external">离线Chrome App</a>，支持移动端 Web；</li>
+<li><strong>深度整合</strong> ：支持选择笔记本和添加标签，支持从印象笔记跳转编辑，轻松管理。</li>
+</ul>
+<hr>
+<p>[TOC]</p>
+<h2 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h2><blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="external">维基百科</a></p>
+</blockquote>
+<p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，创建一个<a href="http://www.example.com" target="_blank" rel="external">链接</a>或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按<code>Ctrl + /</code>查看帮助。 </p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="LaTeX-公式"><a href="#LaTeX-公式" class="headerlink" title="LaTeX 公式"></a>LaTeX 公式</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/07/markedown-2017-11-7/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/redux-study/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -354,99 +657,16 @@
 
       
         
-          
-            <h2 id="应用场景：-为什么要用redux？"><a href="#应用场景：-为什么要用redux？" class="headerlink" title="应用场景： 为什么要用redux？"></a>应用场景： 为什么要用redux？</h2><p>直接从需要入手开始</p>
+          <h2 id="应用场景：-为什么要用redux？"><a href="#应用场景：-为什么要用redux？" class="headerlink" title="应用场景： 为什么要用redux？"></a>应用场景： 为什么要用redux？</h2><p>直接从需求入手开始</p>
 <h3 id="需求-1-0：在控制台上记录用户的每个动作"><a href="#需求-1-0：在控制台上记录用户的每个动作" class="headerlink" title="需求 1.0：在控制台上记录用户的每个动作"></a>需求 1.0：在控制台上记录用户的每个动作</h3><p>如果后端开发的话，一般会设计一个统计用户记录日志的中间件middleware<br>例如，在Express 中实现一个加单的logger,如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> loggerMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'[Logger]'</span>, req.method, req.originalUrl)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line">...</div><div class="line">app.use(loggerMiddleware)</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">这样每次访问的时候，都会在控制台中留下类似下面的日志便于追踪调试：</span></div></pre></td></tr></table></figure>
-<p>[Logger] GET  /<br>[Logger] POST /login<br>[Logger] GET  /user?uid=10086<br>…<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">如果把场景移动到前端，第一反应应该是这样实现，如下</div><div class="line"></div><div class="line">```js</div><div class="line">/** jQuery **/</div><div class="line">$(&apos;#loginBtn&apos;).on(&apos;click&apos;, function(e) &#123;</div><div class="line">  console.log(&apos;[Logger] 用户登录&apos;)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line">$(&apos;#logoutBtn&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">  console.log(&apos;[Logger] 用户退出登录&apos;)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line"></div><div class="line">/** MVC / MVVM 框架（这里以纯 Vue 举例） **/</div><div class="line">methods: &#123;</div><div class="line">  handleLogin () &#123;</div><div class="line">    console.log(&apos;[Logger] 用户登录&apos;)</div><div class="line">    ...</div><div class="line">  &#125;,</div><div class="line">  handleLogout () &#123;</div><div class="line">    console.log(&apos;[Logger] 用户退出登录&apos;)</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>上述 jQuery 与 MV* 的写法并没有本质上的区别<br>记录用户行为代码的侵入性极强，可维护性与扩展性十分堪忧</p>
-<h3 id="需求2-0升级"><a href="#需求2-0升级" class="headerlink" title="需求2.0升级"></a>需求2.0升级</h3><p>上线过了1个月觉得暴露信息太少了，额外我们需要统计用户操作的时间，如果按照前端的思想去改的话，当然得一个一个改，或者编辑器全局替换，</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** jQuery **/</span></div><div class="line">$(<span class="string">'#loginBtn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'[Logger] 用户登录'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line">$(<span class="string">'#logoutBtn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'[Logger] 用户退出登录'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">/** MVC / MVVM 框架（这里以 Vue 举例） **/</span></div><div class="line">methods: &#123;</div><div class="line">  handleLogin () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'[Logger] 用户登录'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">    ...</div><div class="line">  &#125;,</div><div class="line">  handleLogout () &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'[Logger] 用户退出登录'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>但是后端的同学，只需要在中间件出修改一下即可，很明显就可以对比出孰优孰劣</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> loggerMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'[Logger]'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>(), req.method, req.originalUrl)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line">...</div><div class="line">app.use(loggerMiddleware)</div></pre></td></tr></table></figure>
-<h3 id="需求3-0"><a href="#需求3-0" class="headerlink" title="需求3.0"></a>需求3.0</h3><p>正式上线之后，我想在console中去掉Logger中的输出。注意，只是去掉Logger中的，其他的必须保留。开发环境下仍然要输出Logger，<br>这时候前端要实现的话，可能得在每一个绑定事件里都要加一个if判断。代码极其臃肿丑陋！</p>
-<p>后端同样只需要在中间处加一下判断即可</p>
-<h3 id="需求-终极版"><a href="#需求-终极版" class="headerlink" title="需求 终极版"></a>需求 终极版</h3><p>我们需要实现线上自动收集bug，并且可以还原当时场景。</p>
-<p>如果只是bug收集的话，可以通过window.error事件，根据source map定位到源码查看（基本上毫无卵用）<br>但如果是还原场景的话，可以说基本不可能实现。因为仅仅报错信息，是无法知道用户到底是怎么一步步操作导致的。<br>即使通过各种奇淫技巧拿到了用户操作顺序。但在自己(开发环境)电脑上，也许永远是通过的……</p>
-<p>相对地，后端的报错的收集、定位以及还原却是相当简单。只要一个 API 有 bug，那无论用什么设备访问，都会得到这个 bug<br>还原 bug 也是相当简单：把数据库备份导入到另一台机器，部署同样的运行环境与代码。如无意外，bug 肯定可以完美重现</p>
-<blockquote>
-<p>实际上 jQuery / MV* 中也能实现用户动作的跟踪，用一个数组往里面 <code>push</code> 用户动作即可<br>但这样操作的意义不大，因为仅仅只有动作，无法反映动作前后，应用状态的变动情况</p>
-</blockquote>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>为何前后端对于这类需求的处理竟然大相径庭？后端为何可以如此优雅？<br>原因在于，后端具有<strong>统一的入口</strong>与<strong>统一的状态管理（数据库）</strong>，因此可以引入<strong>中间件机制</strong>来<strong>统一</strong>实现某些功能  </p>
-<p>多年来，前端工程师忍辱负重，操着卖白粉的心，赚着买白菜的钱，一直处于程序员鄙视链的底层<br>于是有大牛就把后端 MVC 的开发思维搬到前端，<strong>将应用中所有的动作与状态都统一管理</strong>，让一切<strong>有据可循</strong> </p>
-<p>使用redux 配合 <a href="https://github.com/gaearon/redux-devtools" target="_blank" rel="external">Redux DevTools</a> 可以实现出“华丽如时光旅行一般的调试效果”<br>实际上就是开发调试过程中可以<strong>撤销与重做</strong>，并且支持应用状态的导入和导出（就像是数据库的备份）<br>而且，由于可以使用日志完整记录下每个动作，因此做到像 Git 般，随时随地恢复到之前的状态</p>
-<blockquote>
-<p>由于可以导出和导入应用的状态（包括路由状态），因此还可以实现前后端同构（服务端渲染）<br>当然，既然有了动作日志以及动作前后的状态备份，那么还原用户报错场景还会是一个难题吗？</p>
-</blockquote>
-<h2 id="redux-怎么用？"><a href="#redux-怎么用？" class="headerlink" title="redux 怎么用？"></a>redux 怎么用？</h2><h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><p>首先要区分 <code>store</code> 和 <code>state</code></p>
-<p><code>state</code> 是应用的状态，一般本质上是一个普通<strong>对象</strong><br>例如，我们有一个 Web APP，包含 计数器 和 待办事项 两大功能<br>那么我们可以为该应用设计出对应的存储数据结构（应用初始状态）：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 应用初始 state，本代码块记为 code-1 **/</span></div><div class="line">&#123;</div><div class="line">  counter: <span class="number">0</span>,</div><div class="line">  todos: []</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>store</code> 是应用状态 <code>state</code> 的管理者，包含下列四个函数：</p>
-<ul>
-<li><code>getState()                  # 获取整个 state</code></li>
-<li><code>dispatch(action)            # ※ 触发 state 改变的【唯一途径】※</code></li>
-<li><code>subscribe(listener)         # 您可以理解成是 DOM 中的 addEventListener</code></li>
-<li><code>replaceReducer(nextReducer) # 一般在 Webpack Code-Splitting 按需加载的时候用</code></li>
-</ul>
-<p>二者的关系是：<code>state = store.getState()</code></p>
-<p>Redux 规定，一个应用只应有一个单一的 <code>store</code>，其管理着唯一的应用状态 <code>state</code><br>Redux 还规定，不能直接修改应用的状态 <code>state</code>，也就是说，下面的行为是不允许的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> state = store.getState()</div><div class="line">state.counter = state.counter + <span class="number">1</span> <span class="comment">// 禁止在业务逻辑中直接修改 state</span></div></pre></td></tr></table></figure>
-<p><strong>若要改变 <code>state</code>，必须 <code>dispatch</code> 一个 <code>action</code>，这是修改应用状态的不二法门</strong>  </p>
-<blockquote>
-<p>现在您只需要记住 <code>action</code> 只是一个包含 <strong><code>type</code></strong> 属性的普通<strong>对象</strong>即可<br>例如 <code>{ type: &#39;INCREMENT&#39; }</code></p>
-</blockquote>
-<p>上面提到，<code>state</code> 是通过 <code>store.getState()</code> 获取，那么 <code>store</code> 又是怎么来的呢？<br>想生成一个 <code>store</code>，我们需要调用 Redux 的 <code>createStore</code>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line">...</div><div class="line"><span class="keyword">const</span> store = createStore(reducer, initialState) <span class="comment">// store 是靠传入 reducer 生成的哦！</span></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line"><span class="string">&gt; 现在您只需要记住 `</span>reducer<span class="string">` 是一个 **函数**，负责**更新**并返回一个**新的** `</span>state<span class="string">`  </span></div><div class="line"><span class="string">&gt; 而 `</span>initialState<span class="string">` 主要用于前后端同构的数据同步（详情请关注 React 服务端渲染）  </span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">### Action</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">上面提到，`</span>action<span class="string">`（动作）实质上是包含 `</span>type<span class="string">` 属性的普通对象，这个 `</span>type<span class="string">` 是我们实现用户行为追踪的关键  </span></div><div class="line"><span class="string">例如，增加一个待办事项 的 `</span>action<span class="string">` 可能是像下面一样：</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">`</span><span class="string">``</span>js</div><div class="line"><span class="comment">/** 本代码块记为 code-2 **/</span></div><div class="line">&#123;</div><div class="line">  type: <span class="string">'ADD_TODO'</span>,</div><div class="line">  payload: &#123;</div><div class="line">    id: <span class="number">1</span>,</div><div class="line">    content: <span class="string">'待办事项1'</span>,</div><div class="line">    completed: <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当然，<code>action</code> 的形式是多种多样的，唯一的约束仅仅就是包含一个 <code>type</code> 属性罢了<br>也就是说，下面这些 <code>action</code> 都是合法的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 如下都是合法的，但就是不够规范 **/</span></div><div class="line">&#123;</div><div class="line">  type: <span class="string">'ADD_TODO'</span>,</div><div class="line">  id: <span class="number">1</span>,</div><div class="line">  content: <span class="string">'待办事项1'</span>,</div><div class="line">  completed: <span class="literal">false</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#123;</div><div class="line">  type: <span class="string">'ADD_TODO'</span>,</div><div class="line">  abcdefg: &#123;</div><div class="line">    id: <span class="number">1</span>,</div><div class="line">    content: <span class="string">'待办事项1'</span>,</div><div class="line">    completed: <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>虽说没有约束，但最好还是遵循<a href="https://github.com/acdlite/flux-standard-action" target="_blank" rel="external">规范</a></p>
-</blockquote>
-<p>如果需要新增一个代办事项，实际上就是将 <code>code-2</code> 中的 <code>payload</code> <strong>“写入”</strong> 到 <code>state.todos</code> 数组中（如何“写入”？在此留个悬念）：  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 本代码块记为 code-3 **/</span></div><div class="line">&#123;</div><div class="line">  counter: <span class="number">0</span>,</div><div class="line">  todos: [&#123;</div><div class="line">    id: <span class="number">1</span>,</div><div class="line">    content: <span class="string">'待办事项1'</span>,</div><div class="line">    completed: <span class="literal">false</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>刨根问底，<code>action</code> 是谁生成的呢？</p>
-<h3 id="Action-Creator"><a href="#Action-Creator" class="headerlink" title="Action Creator"></a>Action Creator</h3><blockquote>
-<p>Action Creator 可以是同步的，也可以是异步的</p>
-</blockquote>
-<p>顾名思义，Action Creator 是 <code>action</code> 的创造者，本质上就是一个<strong>函数</strong>，返回值是一个 <code>action</code>（<strong>对象</strong>）<br>例如下面就是一个 “新增一个待办事项” 的 Action Creator：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 本代码块记为 code-4 **/</span></div><div class="line"><span class="keyword">var</span> id = <span class="number">1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    type: <span class="string">'ADD_TODO'</span>,</div><div class="line">    payload: &#123;</div><div class="line">      id: id++,</div><div class="line">      content: content, <span class="comment">// 待办事项内容</span></div><div class="line">      completed: <span class="literal">false</span>  <span class="comment">// 是否完成的标识</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>将该函数应用到一个表单（假设 <code>store</code> 为全局变量，并引入了 jQuery ）：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">--!</span> 本代码块记为 <span class="attr">code-5</span> <span class="attr">--</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"todoInput"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">$(<span class="string">'#btn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> content = $(<span class="string">'#todoInput'</span>).val() <span class="comment">// 获取输入框的值</span></span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> action = addTodo(content) <span class="comment">// 执行 Action Creator 获得 action</span></span></div><div class="line"><span class="javascript">  store.dispatch(action) <span class="comment">// 改变 state 的不二法门：dispatch 一个 action！！！</span></span></div><div class="line"><span class="undefined">&#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在输入框中输入 “待办事项2” 后，点击一下提交按钮，我们的 <code>state</code> 就变成了：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 本代码块记为 code-6 **/</span></div><div class="line">&#123;</div><div class="line">  counter: <span class="number">0</span>,</div><div class="line">  todos: [&#123;</div><div class="line">    id: <span class="number">1</span>,</div><div class="line">    content: <span class="string">'待办事项1'</span>,</div><div class="line">    completed: <span class="literal">false</span></div><div class="line">  &#125;, &#123;</div><div class="line">    id: <span class="number">2</span>,</div><div class="line">    content: <span class="string">'待办事项2'</span>,</div><div class="line">    completed: <span class="literal">false</span></div><div class="line">  &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>通俗点讲，Action Creator 用于绑定到用户的操作（点击按钮等），其返回值 <code>action</code> 用于之后的 <code>dispatch(action)</code></p>
-</blockquote>
-<p>刚刚提到过，<code>action</code> 明明就没有强制的规范，为什么 <code>store.dispatch(action)</code> 之后，<br>Redux 会明确知道是提取 <code>action.payload</code>，并且是对应写入到 <code>state.todos</code> 数组中？<br>又是谁负责“写入”的呢？悬念即将揭晓…</p>
-<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><blockquote>
-<p>Reducer 必须是同步的纯函数  </p>
-</blockquote>
-<p>用户每次 <code>dispatch(action)</code> 后，都会触发 <code>reducer</code>  的执行<br><code>reducer</code> 的实质是一个<strong>函数</strong>，根据 <code>action.type</code> 来<strong>更新</strong> <code>state</code> 并返回 <code>nextState</code><br>最后会用 <code>reducer</code> 的返回值 <code>nextState</code> <strong>完全替换掉</strong>原来的 <code>state</code></p>
-<blockquote>
-<p>注意：上面的这个 “更新” 并不是指 <code>reducer</code> 可以直接对 <code>state</code> 进行修改<br>Redux 规定，须先复制一份 <code>state</code>，在副本 <code>nextState</code> 上进行修改操作<br>例如，可以使用 lodash 的 <code>cloneDeep</code>，也可以使用 <code>Object.assign / map / filter/ ...</code> 等返回副本的函数</p>
-</blockquote>
-<p>在上面 Action Creator 中提到的 待办事项的 <code>reducer</code> 大概是长这个样子 (为了容易理解，在此不使用 ES6 / <a href="https://github.com/facebook/immutable-js" target="_blank" rel="external">Immutable.js</a>)：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">/** 本代码块记为 code-7 **/</span></div><div class="line"><span class="keyword">var</span> initState = &#123;</div><div class="line">  counter: <span class="number">0</span>,</div><div class="line">  todos: []</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>) </span>&#123;</div><div class="line">  <span class="comment">// ※ 应用的初始状态是在第一次执行 reducer 时设置的 ※</span></div><div class="line">  <span class="keyword">if</span> (!state) state = initState</div><div class="line">  </div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:</div><div class="line">      <span class="keyword">var</span> nextState = _.cloneDeep(state) <span class="comment">// 用到了 lodash 的深克隆</span></div><div class="line">      nextState.todos.push(action.payload) </div><div class="line">      <span class="keyword">return</span> nextState</div><div class="line"></div><div class="line">    <span class="keyword">default</span>:</div><div class="line">    <span class="comment">// 由于 nextState 会把原 state 整个替换掉</span></div><div class="line">    <span class="comment">// 若无修改，必须返回原 state（否则就是 undefined）</span></div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>通俗点讲，就是 <code>reducer</code> 返回啥，<code>state</code> 就被替换成啥</p>
-</blockquote>
-<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><ul>
-<li><code>store</code> 由 Redux 的 <code>createStore(reducer)</code> 生成</li>
-<li><code>state</code> 通过 <code>store.getState()</code> 获取，本质上一般是一个存储着整个应用状态的<strong>对象</strong></li>
-<li><code>action</code> 本质上是一个包含 <code>type</code> 属性的普通<strong>对象</strong>，由 Action Creator (<strong>函数</strong>) 产生</li>
-<li>改变 <code>state</code> 必须 <code>dispatch</code> 一个 <code>action</code></li>
-<li><code>reducer</code> 本质上是根据 <code>action.type</code> 来更新 <code>state</code> 并返回 <code>nextState</code> 的<strong>函数</strong></li>
-<li><code>reducer</code> 必须返回值，否则 <code>nextState</code> 即为 <code>undefined</code></li>
-<li>实际上，<strong><code>state</code> 就是所有 <code>reducer</code> 返回值的汇总</strong>（本教程只有一个 <code>reducer</code>，主要是应用场景比较简单）</li>
-</ul>
-<blockquote>
-<p>Action Creator =&gt; <code>action</code> =&gt; <code>store.dispatch(action)</code> =&gt; <code>reducer(state, action)</code> =&gt; <del><code>原 state</code></del> <code>state = nextState</code> </p>
-</blockquote>
-<h2 id="终极问题：Redux-本质是什么，思想的来源在哪？"><a href="#终极问题：Redux-本质是什么，思想的来源在哪？" class="headerlink" title="终极问题：Redux 本质是什么，思想的来源在哪？"></a>终极问题：Redux 本质是什么，思想的来源在哪？</h2><p>Redux 可以看做是后端MVC思想的前端实现和应用, 下面这张表完美地解释了一切。</p>
-<p>—|—<br><code>store</code> | 数据库实例<br><code>state</code> | 数据库中存储的数据<br><code>dispatch(action)</code> | 用户发起请求<br><code>action: { type, payload }</code> | <code>type</code> 表示请求的 URL，<code>payload</code> 表示请求的数据<br><code>reducer</code> | 路由 + 控制器（handler）<br><code>reducer</code> 中的 <code>switch-case</code> 分支 | 路由，根据 <code>action.type</code> 路由到对应的控制器<br><code>reducer</code> 内部对 <code>state</code> 的处理 | 控制器对数据库进行增删改操作<br><code>reducer</code> 返回 <code>nextState</code> | 将修改后的记录写回数据库</p>
-<p>Redux 中 state 中的状态 就是对应的数据库中的数据。Redux 本质上就是一个封装好的状态管理工具。</p>
-
-          
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> loggerMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'[Logger]'</span>, req.method, req.originalUrl)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line">...</div><div class="line">app.use(loggerMiddleware)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/07/redux-study/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -966,6 +1186,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -991,7 +1213,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1002,7 +1224,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1013,7 +1235,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1092,7 +1314,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
 
 
 
@@ -1112,6 +1334,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -1139,10 +1363,9 @@
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -1184,12 +1407,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1204,13 +1422,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
 
   
 
