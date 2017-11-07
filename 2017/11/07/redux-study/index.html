@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT, Javascript, React, Blog" />
+  <meta name="keywords" content="redux,MVC,react," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="写写心得，发发牢骚，爬爬天坑，孤单的编程之路上留点念。希望有一天蓦然回首，发现原来自己走了这么远了啊.......">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kabulu | 杂食堆">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="应用场景： 为什么要用redux？直接从需要入手开始 需求 1.0：在控制台上记录用户的每个动作如果后端开发的话，一般会设计一个统计用户记录日志的中间件middleware例如，在Express 中实现一个加单的logger,如下： var loggerMiddleware = function(req, res, next) &amp;#123;  console.log(&apos;[Logger]&apos;, req">
+<meta name="keywords" content="redux,MVC,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redux 深入理解">
+<meta property="og:url" content="http://yoursite.com/2017/11/07/redux-study/index.html">
 <meta property="og:site_name" content="kabulu | 杂食堆">
-<meta property="og:description" content="写写心得，发发牢骚，爬爬天坑，孤单的编程之路上留点念。希望有一天蓦然回首，发现原来自己走了这么远了啊.......">
+<meta property="og:description" content="应用场景： 为什么要用redux？直接从需要入手开始 需求 1.0：在控制台上记录用户的每个动作如果后端开发的话，一般会设计一个统计用户记录日志的中间件middleware例如，在Express 中实现一个加单的logger,如下： var loggerMiddleware = function(req, res, next) &amp;#123;  console.log(&apos;[Logger]&apos;, req">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-07T15:18:56.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kabulu | 杂食堆">
-<meta name="twitter:description" content="写写心得，发发牢骚，爬爬天坑，孤单的编程之路上留点念。希望有一天蓦然回首，发现原来自己走了这么远了啊.......">
+<meta name="twitter:title" content="redux 深入理解">
+<meta name="twitter:description" content="应用场景： 为什么要用redux？直接从需要入手开始 需求 1.0：在控制台上记录用户的每个动作如果后端开发的话，一般会设计一个统计用户记录日志的中间件middleware例如，在Express 中实现一个加单的logger,如下： var loggerMiddleware = function(req, res, next) &amp;#123;  console.log(&apos;[Logger]&apos;, req">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/07/redux-study/"/>
 
 
 
 
 
-  <title>kabulu | 杂食堆</title>
+  <title>redux 深入理解 | kabulu | 杂食堆</title>
   
 
 
@@ -153,8 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -279,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/07/redux-study/" itemprop="url">redux 深入理解</a></h1>
+          <h1 class="post-title" itemprop="name headline">redux 深入理解</h1>
         
 
         <div class="post-meta">
@@ -353,9 +352,7 @@
       
 
       
-        
-          
-            <h2 id="应用场景：-为什么要用redux？"><a href="#应用场景：-为什么要用redux？" class="headerlink" title="应用场景： 为什么要用redux？"></a>应用场景： 为什么要用redux？</h2><p>直接从需要入手开始</p>
+        <h2 id="应用场景：-为什么要用redux？"><a href="#应用场景：-为什么要用redux？" class="headerlink" title="应用场景： 为什么要用redux？"></a>应用场景： 为什么要用redux？</h2><p>直接从需要入手开始</p>
 <h3 id="需求-1-0：在控制台上记录用户的每个动作"><a href="#需求-1-0：在控制台上记录用户的每个动作" class="headerlink" title="需求 1.0：在控制台上记录用户的每个动作"></a>需求 1.0：在控制台上记录用户的每个动作</h3><p>如果后端开发的话，一般会设计一个统计用户记录日志的中间件middleware<br>例如，在Express 中实现一个加单的logger,如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> loggerMiddleware = <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'[Logger]'</span>, req.method, req.originalUrl)</div><div class="line">  next()</div><div class="line">&#125;</div><div class="line">...</div><div class="line">app.use(loggerMiddleware)</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">这样每次访问的时候，都会在控制台中留下类似下面的日志便于追踪调试：</span></div></pre></td></tr></table></figure>
 <p>[Logger] GET  /<br>[Logger] POST /login<br>[Logger] GET  /user?uid=10086<br>…<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">如果把场景移动到前端，第一反应应该是这样实现，如下</div><div class="line"></div><div class="line">```js</div><div class="line">/** jQuery **/</div><div class="line">$(&apos;#loginBtn&apos;).on(&apos;click&apos;, function(e) &#123;</div><div class="line">  console.log(&apos;[Logger] 用户登录&apos;)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line">$(&apos;#logoutBtn&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">  console.log(&apos;[Logger] 用户退出登录&apos;)</div><div class="line">  ...</div><div class="line">&#125;)</div><div class="line"></div><div class="line">/** MVC / MVVM 框架（这里以纯 Vue 举例） **/</div><div class="line">methods: &#123;</div><div class="line">  handleLogin () &#123;</div><div class="line">    console.log(&apos;[Logger] 用户登录&apos;)</div><div class="line">    ...</div><div class="line">  &#125;,</div><div class="line">  handleLogout () &#123;</div><div class="line">    console.log(&apos;[Logger] 用户退出登录&apos;)</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -446,8 +443,6 @@
 <p>—|—<br><code>store</code> | 数据库实例<br><code>state</code> | 数据库中存储的数据<br><code>dispatch(action)</code> | 用户发起请求<br><code>action: { type, payload }</code> | <code>type</code> 表示请求的 URL，<code>payload</code> 表示请求的数据<br><code>reducer</code> | 路由 + 控制器（handler）<br><code>reducer</code> 中的 <code>switch-case</code> 分支 | 路由，根据 <code>action.type</code> 路由到对应的控制器<br><code>reducer</code> 内部对 <code>state</code> 的处理 | 控制器对数据库进行增删改操作<br><code>reducer</code> 返回 <code>nextState</code> | 将修改后的记录写回数据库</p>
 <p>Redux 中 state 中的状态 就是对应的数据库中的数据。Redux 本质上就是一个封装好的状态管理工具。</p>
 
-          
-        
       
     </div>
     
@@ -462,325 +457,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/04/hexo-nest/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="卡布鲁司机">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kabulu | 杂食堆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/04/hexo-nest/" itemprop="url">hexo-next 熟悉攻略</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T01:44:23+08:00">
-                2017年 11月 4日
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/redux/" rel="tag"># redux</a>
           
-
+            <a href="/tags/MVC/" rel="tag"># MVC</a>
           
-            
+            <a href="/tags/react/" rel="tag"># react</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="文本居中引用"><a href="#文本居中引用" class="headerlink" title="文本居中引用"></a>文本居中引用</h2><blockquote class="blockquote-center">不如意事常八九，可与言者无二三 </blockquote>
-
-<p>有如下3种方式，都可以达成上面的效果</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;不如意事常八九，可与言者无二三 &lt;/blockquote&gt;</div><div class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</div><div class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</div></pre></td></tr></table></figure>
-<h2 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h2><p>效果如下<br><blockquote class="blockquote-center"><p>blah blah blah</p>
-</blockquote></p>
-<p>其中name为以下的值都可以</p>
-<ul>
-<li><code>default</code></li>
-<li><code>primary</code></li>
-<li><code>success</code></li>
-<li><code>info</code></li>
-<li><code>warning</code></li>
-</ul>
-<p>加索引链接</p>
-<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
-<h2 id="插入代码块"><a href="#插入代码块" class="headerlink" title="插入代码块"></a>插入代码块</h2><p>在文章中插入代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% codeblock [title] [lang:language] [url] [link text] %&#125;</div><div class="line">code snippet</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> box = <span class="number">1</span>;</div><div class="line">alert(<span class="string">"haha"</span>);</div></pre></td></tr></table></figure>
-<h2 id="引入文章和资源"><a href="#引入文章和资源" class="headerlink" title="引入文章和资源"></a>引入文章和资源</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&#123;% post_path slug %&#125;</div><div class="line">&#123;% post_link slug [title] %&#125;</div><div class="line">&#123;% asset_path slug %&#125;</div><div class="line">&#123;% asset_img slug [title] %&#125;</div><div class="line">&#123;% asset_link slug [title] %&#125;</div></pre></td></tr></table></figure>
-<p>文章<br><br>资源<br></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/hexo-config/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="卡布鲁司机">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kabulu | 杂食堆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/03/hexo-config/" itemprop="url">hexo 部署的几个大坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T18:45:14+08:00">
-                2017年 11月 3日
-              </time>
+              <a href="/2017/11/04/hexo-nest/" rel="next" title="hexo-next 熟悉攻略">
+                <i class="fa fa-chevron-left"></i> hexo-next 熟悉攻略
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>填坑填坑，简直是累的要死</p>
-<h3 id="部署到github上命名问题"><a href="#部署到github上命名问题" class="headerlink" title="部署到github上命名问题"></a>部署到github上命名问题</h3><ul>
-<li>github的repo命名一定要以<code>你的github的用户名.github.io</code>创建。如果是其他的名字都会404报错</li>
-<li>其实并不是没有部署成功，而是实际路径会很麻烦。</li>
-</ul>
-<h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><p>如果一个事物受到多种因素的影响，不管每个因素本身是什么分布，它们加总后，结果的平均值就是正态分布（normal distribution）。<br>ps:这些因素不能使互相叠加的。必须是相互独立，互不干扰。</p>
-<p>财富的分配就是因为各个因素具有相互叠加作用。会互相加强影响。一般呈现对数正太分布(log normal distribution)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -790,160 +500,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="卡布鲁司机">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kabulu | 杂食堆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/03/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T17:36:47+08:00">
-                2017年 11月 3日
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -951,6 +512,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -971,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1060,6 +634,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景：-为什么要用redux？"><span class="nav-number">1.</span> <span class="nav-text">应用场景： 为什么要用redux？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求-1-0：在控制台上记录用户的每个动作"><span class="nav-number">1.1.</span> <span class="nav-text">需求 1.0：在控制台上记录用户的每个动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求2-0升级"><span class="nav-number">1.2.</span> <span class="nav-text">需求2.0升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求3-0"><span class="nav-number">1.3.</span> <span class="nav-text">需求3.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求-终极版"><span class="nav-number">1.4.</span> <span class="nav-text">需求 终极版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redux-怎么用？"><span class="nav-number">2.</span> <span class="nav-text">redux 怎么用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Store"><span class="nav-number">2.1.</span> <span class="nav-text">Store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action-Creator"><span class="nav-number">2.2.</span> <span class="nav-text">Action Creator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducer"><span class="nav-number">2.3.</span> <span class="nav-text">Reducer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">2.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终极问题：Redux-本质是什么，思想的来源在哪？"><span class="nav-number">3.</span> <span class="nav-text">终极问题：Redux 本质是什么，思想的来源在哪？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1213,6 +803,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
