@@ -262,6 +262,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/reg-2017-11-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="卡布鲁司机">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kabulu | 杂食堆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/13/reg-2017-11-13/" itemprop="url">正则的查漏补缺</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T23:08:59+08:00">
+                2017年 11月 13日
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/正则/" itemprop="url" rel="index">
+                    <span itemprop="name">正则</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><code>\b</code> 表示单词边界，比如我想在一段话中精确找到单词im，或我想找eng结尾的所有单词，这时候就可以通过单词边界进行匹配。<code>/\bim\b/</code> <code>/\w+eng\b/g</code> </li>
+<li><p>构造函数中<code>new RegExp()</code>中一定要记得对反斜线\进行转义,在javascript中反斜线本身就是特殊字符，使用需要转义</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\w+eng\\b'</span>,<span class="string">'g'</span>) <span class="comment">//undefined</span></div><div class="line"><span class="comment">// reg = /\w+eng\b/g</span></div><div class="line"><span class="string">"asd abc leng kkeng alkegl lkjengll"</span>.match(reg)</div><div class="line"><span class="comment">// ["leng","kkeng"]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>\t</code> 水平制表符，其实就是tab键占的空格！</p>
+</li>
+<li><code>[abc]</code> 创建abc字符类，<code>[^abc]</code> 创建反向字符类，就是差集的意思,除了abc其他的都匹配</li>
+<li><code>\w</code> 的等价类就是<code>[a-zA-Z_0-9]</code> ，<code>\s</code> 是 <code>[\t\n\x0B\f\r]</code> 空白符</li>
+<li><p>正则默认是贪婪模式，即最大程度地匹配，非贪婪模式则是说尽可能少地匹配，也就是说一旦成功不再继续尝试就是非贪婪模式。</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 贪婪模式</span></div><div class="line"><span class="string">"123456789"</span>.match(<span class="regexp">/\d&#123;3,6&#125;/</span>) <span class="comment">//123456 而不是123</span></div><div class="line"><span class="comment">// 非贪婪模式，只要在量词后面加上？就可以了，比如\w+?</span></div><div class="line"><span class="string">"123456789"</span>.match(<span class="regexp">/\d&#123;3,6&#125;?/g</span>) <span class="comment">// ["123","456","789"]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>连续匹配python单词3次，可以通过分组功能实现<code>(python){3}</code>,量词可以作用于组别上，</p>
+</li>
+<li><p>或 <code>|</code> 如下所示</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="string">"ByronCapser"</span>.replace(<span class="regexp">/Byron|Casper/g</span>,<span class="string">"X"</span>) <span class="comment">// XX</span></div><div class="line"><span class="string">"ByronsperByrCapser"</span>.replace(<span class="regexp">/Byr(on|Ca)sper/g</span>,<span class="string">"X"</span>) <span class="comment">// XX</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>反向引用，比如想把2015-12-25 变成 12/25/2015 如何实现</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="string">"2015-12-25"</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>,<span class="string">"$2/$3/$1"</span>) <span class="comment">// "12/25/2015"</span></div><div class="line"><span class="comment">// $1,$2,$3可以捕获分组匹配的内容</span></div><div class="line"><span class="comment">// 如果不想捕获某个分组，只需要在分组内加上 ?: 就可以了  </span></div><div class="line"><span class="string">"2015-12-25"</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(?:\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>,<span class="string">"$2/$1"</span>) <span class="comment">// "25/2015"</span></div></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/resume-2017-11-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1536,7 +1697,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1547,7 +1708,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1558,7 +1719,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
