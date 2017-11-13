@@ -262,6 +262,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/resume-2017-11-13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="卡布鲁司机">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kabulu | 杂食堆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/13/resume-2017-11-13/" itemprop="url">11月13日，杂食堆小记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T16:08:17+08:00">
+                2017年 11月 13日
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂食堆/" itemprop="url" rel="index">
+                    <span itemprop="name">杂食堆</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-overflow-auto-的页面在ios端不能平滑滚动，有明显的卡顿，如何处理解决？"><a href="#1-overflow-auto-的页面在ios端不能平滑滚动，有明显的卡顿，如何处理解决？" class="headerlink" title="1. overflow:auto 的页面在ios端不能平滑滚动，有明显的卡顿，如何处理解决？"></a>1. overflow:auto 的页面在ios端不能平滑滚动，有明显的卡顿，如何处理解决？</h3><p><code>-webkit-overscroll-scrolling:touch</code>;</p>
+<ul>
+<li>这行代码在webkit内核浏览器里会开启硬件加速，所以性能会更好。</li>
+<li>对于Safari来说，对于有<code>-webkit-overflow-scrolling</code>的网页，会创建一个UIScrollView，提供子layer给渲染模块使用</li>
+</ul>
+<p>从前端开发的角度讲，只需要知道CSS的属性-webkit-overflow-scrolling是真的创建了带有硬件加速的系统级控件，所以效率很高。</p>
+<ul>
+<li>第三方库：<strong>IScroll</strong> （推荐）<br>因为在某些落后版本的andriod端和IOS，还是不行。并不支持区域滚动。<strong>IScroll</strong> 基本都适配了，同时<code>IScroll</code>支持配置滚动条,专属触发事件等等。</li>
+</ul>
+<h3 id="2-为什么字体字号一般选用偶数"><a href="#2-为什么字体字号一般选用偶数" class="headerlink" title="2. 为什么字体字号一般选用偶数"></a>2. 为什么字体字号一般选用偶数</h3><ul>
+<li>偶数字号更容易与其他页面部分构成比例。不让一个100px的div中让一段文字居中。</li>
+<li>window自带的字体一般只提供12,14,16px的点阵、奇数用的是小一号的字体点阵，只不过空间变大了，显得不协调不好看。（旧版浏览器）</li>
+<li>现在来说知乎、豆瓣分别是13px,15px。基本上习惯使然。</li>
+</ul>
+<h3 id="3-斗鱼直播长时间不在会给予用户提示，并切断直播流，节约流量，如何实现？"><a href="#3-斗鱼直播长时间不在会给予用户提示，并切断直播流，节约流量，如何实现？" class="headerlink" title="3. 斗鱼直播长时间不在会给予用户提示，并切断直播流，节约流量，如何实现？"></a>3. 斗鱼直播长时间不在会给予用户提示，并切断直播流，节约流量，如何实现？</h3><p><code>HTML5 Page Visibility</code></p>
+<p>参考链接：<a href="http://www.cnblogs.com/zichi/p/5158745.html" target="_blank" rel="external">http://www.cnblogs.com/zichi/p/5158745.html</a></p>
+<h3 id="4-document-write-和innerHTML区别"><a href="#4-document-write-和innerHTML区别" class="headerlink" title="4. document.write 和innerHTML区别"></a>4. document.write 和innerHTML区别</h3><p>docuemt.write 是重绘整个页面，innerHTML可以重绘页面的一部分</p>
+<h3 id="5-Cookie-隔离"><a href="#5-Cookie-隔离" class="headerlink" title="5. Cookie 隔离"></a>5. Cookie 隔离</h3><p>首先，网站向服务器请求的时候，会自动带上cookie，这样增加表头信息量。Cookie 隔离，就是说，让请求资源的时候不带cookie。怎么实现呢？</p>
+<p>传统做法：将css、js、图片等静态资源放在多个域名（CDN)下请求。这样可以跨过浏览器对统一主机名的并发连接上限（50连接数？），提高整体并发量。</p>
+<p>cookie隔离技术则是通过使用多个非主要域名来请求静态文件，如果静态文件都放在主域名下，那静态文件请求的时候带有的cookie的数据提交给server是非常浪费的，还不如隔离开</p>
+<p>因为cookie有域的限制。不能跨域请求，所以使用非主要域名的时候，请求头就不会带cookie，同时这种方式不会将cookie传入webserver，也减少了webserver对cookie的处理分析环节，提高了webserver的http请求的解析速度。</p>
+<h3 id="6-new-一个类，到底干了什么，类的静态方法，实例方法。"><a href="#6-new-一个类，到底干了什么，类的静态方法，实例方法。" class="headerlink" title="6. new 一个类，到底干了什么，类的静态方法，实例方法。"></a>6. new 一个类，到底干了什么，类的静态方法，实例方法。</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> obj  = &#123;&#125;;</div><div class="line">obj.__proto__ = Base.prototype;</div><div class="line">Base.call(obj);</div></pre></td></tr></table></figure>
+<p><img src="./img/code-1.png" alt="类的静态方法、实例方法"></p>
+<h3 id="7-html5shiv-干嘛用的-原理是什么？"><a href="#7-html5shiv-干嘛用的-原理是什么？" class="headerlink" title="7. html5shiv 干嘛用的? 原理是什么？"></a>7. html5shiv 干嘛用的? 原理是什么？</h3><p>为了解决IE9以下的浏览器不识别html5元素，不能作为父节点包裹子元素，并且不能应用css样式。<br>html5shiv可以让其支持部分<code>html5</code>元素，并提供一些样式。</p>
+<p>调用方式：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lt IE9]&gt;</span></div><div class="line"><span class="comment">&lt;script type="text/javascript" src="scripts/html5shiv.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure></p>
+<p>原理：<a href="http://www.qdfuns.com/notes/17631/a20a0f394d460cdd66fc7ffb0d68d6fb.html" target="_blank" rel="external">http://www.qdfuns.com/notes/17631/a20a0f394d460cdd66fc7ffb0d68d6fb.html</a></p>
+<p><strong>首先，第一点，想让css样式应用在未知元素上，只需执行<code>document.createElement(elementName)</code>即可实现，这是最基本的根源</strong></p>
+<p>对于未知的元素标签<code>mytag</code>，只要在head中执行一次<code>document.createElement(mytag)</code>,那么body里所有mytag标签在渲染时就会自动正确应用css样式了。”让CSS样式应用在未知元素上只需执行 <code>document.createElement(elementName)</code> 即可实现。</p>
+<p>所以 <strong>基本原理</strong> 就是在执行的时候，先往head中插入应用到html5标签的css样式，然后对于所有html5标签都执行一次document.createElement(nodeName)，这样，浏览器在渲染body部分时，对于html5标签就能够正确的应用css样式，这也就是html5shiv.js必须放置在head中的原因</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/xss-2017-11-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -354,59 +524,21 @@
 
       
         
-          
-            <h2 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h2><h3 id="CSRF-Cross-site-request-forgery-伪造"><a href="#CSRF-Cross-site-request-forgery-伪造" class="headerlink" title="CSRF(Cross-site request forgery[伪造]):"></a><code>CSRF</code>(Cross-site request forgery[伪造]):</h3><p>全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作</p>
+          <h2 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h2><h3 id="CSRF-Cross-site-request-forgery-伪造"><a href="#CSRF-Cross-site-request-forgery-伪造" class="headerlink" title="CSRF(Cross-site request forgery[伪造]):"></a><code>CSRF</code>(Cross-site request forgery[伪造]):</h3><p>全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作</p>
 <h4 id="具体操作原理："><a href="#具体操作原理：" class="headerlink" title="具体操作原理："></a>具体操作原理：</h4><p>用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CSRF攻击的网站，该网站便会盗用用户当前浏览器的cookie来模拟用户想服务器发送请求，执行预谋的操作。</p>
 <blockquote><p>CSRF基于曹操 <code>挟天子以令诸侯</code> 的手段上做了 <code>创新</code>：挟天子以骗诸侯。</p>
 </blockquote>
 <p>这样的盗用能够生效，有两个前提条件</p>
 <p>1.用户没有登出当前网站，并且当前用户Session未过期。<br>2.用户受到的诱惑，真实打开了攻击网站</p>
 <p>上面说这么多还是太模糊了，直接上场景：</p>
-<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4><p>下班后，手机没电关机之前的最后一个电话是我一朋友打来借钱的。无奈我只能打开Chrome，访问了某银行网站，好在我成功登录（手机接到验证码后便关机了）</p>
-<p>导航到转账页面，我输入好金额和对方账号，点击提交后，浏览器发起一个请求：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">GET https://bank.cn/withdraw?account=sjyuan&amp;amount=5000&amp;for=FriendAccount</div></pre></td></tr></table></figure>
-<p>转账成功后，我开始浏览某论坛。某帖子有一个评论附了一张照片，我好奇地点击了照片，不料中招，链接地址是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;img src=&quot;https://bank.cn/withdraw?account=sjyuan&amp;amount=1000&amp;for=HackerAccount&quot;&gt;</div></pre></td></tr></table></figure>
-<p>假如我恰好账户里有1000以上的存款.可能就会成功给黑客转账1000元…..god</p>
-<p>你可能会纳闷，为什么这个转账操作会被服务器接受呢？</p>
-<p>首先，黑客没有强制我去做什么，他也没法获取我从服务器上所获取的信息，他做的事情是向我访问的网站域名发出一个GET请求，而该请求会自动附上浏览器中该域（bank.cn）对应Cookie中的用户身份认证信息（Session未过期），所以服务器认为这是一个认证过的用户请求。更糟糕的是，服务器上没有留下黑客的任何非法攻击痕迹（当然收款方账号可能留下了技术之外的脚印），因为服务器认为该请求是我发起的。</p>
-<p>上述只是为了叙述原理，简化了银行这边的校验。实际上，一般都会由reffer的ip地址校验，一般也不会用get请求来明文发支付相关的操作。</p>
-<p>防御措施</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">上述可以看出，核心的问题在与：服务器缺乏除了cookie之外的认证机制。</div></pre></td></tr></table></figure>
-<p>所以如果我们从技术角度上防御CSRF攻击，主要有2个出发点</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1. 增加额外的校验机制来加强cookie认证。</div><div class="line">2. 控制好技术规范，正确使用HTTP动作。</div><div class="line">3. 摒弃检验Cookie中的用户身份信息的机制，采用token，比如JWT。</div></pre></td></tr></table></figure>
-<p>在展开讨论方案之前，我们先来剖析CSRF核心攻击点。用户对系统的使用，无非就是对服务器资源的CRUD（Create, Retrive, Update, Delete），由于R操作不会涉及到数据的更改，所以服务器要做的是防御客户端的CUD请求。而CSRF攻击正是黑客利用用户的Cookie信息伪造用户的CUD请求。所以我们要增加黑客无法盗用的东西，比如保存在Cookie之外的Token。</p>
-<p>常用解决方案：增加额外校验机制，引入token</p>
-<p>关于增加额外的校验机制，经典的做法是基于HTTP请求动作添加CSRF Token，即在请求参数或者Header中添加额外的Token</p>
-<p>服务器首先会生成一个Token保存在Session中，然后返回客户端。客户端在提交CUD请求的时候附带Token，服务会从Session中取出Token与请求中的Token进行比对校验。</p>
-<p>Spring security默认就启用了CSRF防御机制。如果我们发起的请求(POST, PUT, PATCH, DELETE)中没有携带任何CSRF的Token，服务器便会阻止请求：</p>
-<p>如何附加token呢？</p>
-<p>懒一点的话，直接在template渲染的时候，把token渲染到form里的隐藏域中。<br>最好的方式当然是通过Javascript脚本来添加token</p>
-<p>另外的一种做法是HTTP header 中的 Referer</p>
-<p>Referer字段主要记录了该HTTP请求的来源地址，那么在转账案件中，黑客模拟我发起转账的请求Header的Referer值就不是我所访问的银行网站的域名。服务器便可以拒绝该请求。</p>
-<p>这种方案是否可靠取决于浏览器厂商的实现是否有安全漏洞，比如IE6的referer是可以被篡改的。<br>另外用户可能因为该机制会记录下访问来源而设置浏览器不再提供referer的值。这会导致正常用户请求也会被服务器拒绝。</p>
-<p>作为开发者，应当遵守常规的HTTP规范，尤其当团队采用</p>
-<h3 id="XSS-Cross-site-scripting"><a href="#XSS-Cross-site-scripting" class="headerlink" title="XSS(Cross-site scripting):"></a><code>XSS</code>(Cross-site scripting):</h3><p>XSS攻击方式：</p>
-<ul>
-<li>反射型</li>
-</ul>
-<p>发出请求时，xss代码出现在url中，作为输入提交到服务器中，服务器解析后响应，xss代码随响应一起传回给浏览器，最后浏览器解析xss代码。这个过程就叫做一次反射。故称为反射型xss</p>
-<p>具体实现方式例子：</p>
-<p>get请求上url参数添加为’?param=<img src="null" onerror="alert(1)">‘</p>
-<p>当url中参数加载解析图片时，因为图片的地址为null，则会触发onerror事件，这时候就会解析onerror里面的代码。alert（1）只是一种示范，<br>实际上很有可能就是一段攻击代码，被浏览器成功执行</p>
-<p>防范措施：</p>
-<p>1.编码处理</p>
-<p>服务器部分接口可以过滤排除掉&lt; 、&gt; 、&amp;等字符，或者进行转义。</p>
-<p>2.过滤属性</p>
-<p>联系一下我们是如何引用js的，一般也就是通过src、script。所以，当服务器模板渲染数据、或ajax回传的数据我们可以过滤掉iframe、script、src、style等标签和属性、同时过滤掉onClick等监听事件的dom属性。</p>
-<p>如果是服务器渲染一次性推过来，那么就在服务器端渲染前，将模板数据进行dom parse、解码、过滤等操作。如果是ajax，就在前端做。</p>
-<p>推荐库：HTML parse。</p>
-<ul>
-<li>存储型</li>
-</ul>
-<p>……</p>
-
-          
+<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/xss-2017-11-10/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1404,7 +1536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1415,7 +1547,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1426,7 +1558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

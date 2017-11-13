@@ -88,7 +88,7 @@
 <meta property="og:description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2017/11/10/xss-2017-11-10/null">
-<meta property="og:updated_time" content="2017-11-12T13:27:26.922Z">
+<meta property="og:updated_time" content="2017-11-12T13:32:47.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSRF 与 XSS 的那些事">
 <meta name="twitter:description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
@@ -361,7 +361,8 @@
 <p>这样的盗用能够生效，有两个前提条件</p>
 <p>1.用户没有登出当前网站，并且当前用户Session未过期。<br>2.用户受到的诱惑，真实打开了攻击网站</p>
 <p>上面说这么多还是太模糊了，直接上场景：</p>
-<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4><p>下班后，手机没电关机之前的最后一个电话是我一朋友打来借钱的。无奈我只能打开Chrome，访问了某银行网站，好在我成功登录（手机接到验证码后便关机了）</p>
+<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4><a id="more"></a>
+<p>下班后，手机没电关机之前的最后一个电话是我一朋友打来借钱的。无奈我只能打开Chrome，访问了某银行网站，好在我成功登录（手机接到验证码后便关机了）</p>
 <p>导航到转账页面，我输入好金额和对方账号，点击提交后，浏览器发起一个请求：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">GET https://bank.cn/withdraw?account=sjyuan&amp;amount=5000&amp;for=FriendAccount</div></pre></td></tr></table></figure>
 <p>转账成功后，我开始浏览某论坛。某帖子有一个评论附了一张照片，我好奇地点击了照片，不料中招，链接地址是：</p>
@@ -448,6 +449,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/11/13/resume-2017-11-13/" rel="prev" title="11月13日，杂食堆小记">
+                11月13日，杂食堆小记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -529,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -540,7 +545,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -551,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
