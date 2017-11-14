@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CSRF,XSS,web安全," />
+  <meta name="keywords" content="fetch," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
-<meta name="keywords" content="CSRF,XSS,web安全">
+<meta name="description" content="fetch 简单介绍选自：MDN https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API Fetch API提供了一个获取资源的接口(包括跨网络)。可以看做是XMLHttpRequest的替代品 兼容性 fetch API语法  Promise | Response fetch(input[, init]);  inithttps://">
+<meta name="keywords" content="fetch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSRF 与 XSS 的那些事">
-<meta property="og:url" content="http://yoursite.com/2017/11/10/xss-2017-11-10/index.html">
+<meta property="og:title" content="fetch 学习">
+<meta property="og:url" content="http://yoursite.com/2017/11/14/fetch-2017-11-14/index.html">
 <meta property="og:site_name" content="kabulu | 杂食堆">
-<meta property="og:description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
+<meta property="og:description" content="fetch 简单介绍选自：MDN https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API Fetch API提供了一个获取资源的接口(包括跨网络)。可以看做是XMLHttpRequest的替代品 兼容性 fetch API语法  Promise | Response fetch(input[, init]);  inithttps://">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/11/10/xss-2017-11-10/null">
-<meta property="og:updated_time" content="2017-11-12T13:32:47.350Z">
+<meta property="og:image" content="http://yoursite.com/2017/11/14/fetch-2017-11-14/img/code-3.png">
+<meta property="og:updated_time" content="2017-11-14T09:47:24.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSRF 与 XSS 的那些事">
-<meta name="twitter:description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/10/xss-2017-11-10/null">
+<meta name="twitter:title" content="fetch 学习">
+<meta name="twitter:description" content="fetch 简单介绍选自：MDN https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API Fetch API提供了一个获取资源的接口(包括跨网络)。可以看做是XMLHttpRequest的替代品 兼容性 fetch API语法  Promise | Response fetch(input[, init]);  inithttps://">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/14/fetch-2017-11-14/img/code-3.png">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/10/xss-2017-11-10/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/14/fetch-2017-11-14/"/>
 
 
 
 
 
-  <title>CSRF 与 XSS 的那些事 | kabulu | 杂食堆</title>
+  <title>fetch 学习 | kabulu | 杂食堆</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/xss-2017-11-10/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/14/fetch-2017-11-14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="卡布鲁司机">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSRF 与 XSS 的那些事</h1>
+          <h1 class="post-title" itemprop="name headline">fetch 学习</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T14:36:07+08:00">
-                2017年 11月 10日
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-14T15:15:06+08:00">
+                2017年 11月 14日
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web安全/" itemprop="url" rel="index">
-                    <span itemprop="name">web安全</span>
+                  <a href="/categories/fetch/" itemprop="url" rel="index">
+                    <span itemprop="name">fetch</span>
                   </a>
                 </span>
 
@@ -354,58 +354,26 @@
       
 
       
-        <h2 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h2><h3 id="CSRF-Cross-site-request-forgery-伪造"><a href="#CSRF-Cross-site-request-forgery-伪造" class="headerlink" title="CSRF(Cross-site request forgery[伪造]):"></a><code>CSRF</code>(Cross-site request forgery[伪造]):</h3><p>全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作</p>
-<h4 id="具体操作原理："><a href="#具体操作原理：" class="headerlink" title="具体操作原理："></a>具体操作原理：</h4><p>用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CSRF攻击的网站，该网站便会盗用用户当前浏览器的cookie来模拟用户想服务器发送请求，执行预谋的操作。</p>
-<blockquote><p>CSRF基于曹操 <code>挟天子以令诸侯</code> 的手段上做了 <code>创新</code>：挟天子以骗诸侯。</p>
-</blockquote>
-<p>这样的盗用能够生效，有两个前提条件</p>
-<p>1.用户没有登出当前网站，并且当前用户Session未过期。<br>2.用户受到的诱惑，真实打开了攻击网站</p>
-<p>上面说这么多还是太模糊了，直接上场景：</p>
-<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4><a id="more"></a>
-<p>下班后，手机没电关机之前的最后一个电话是我一朋友打来借钱的。无奈我只能打开Chrome，访问了某银行网站，好在我成功登录（手机接到验证码后便关机了）</p>
-<p>导航到转账页面，我输入好金额和对方账号，点击提交后，浏览器发起一个请求：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">GET https://bank.cn/withdraw?account=sjyuan&amp;amount=5000&amp;for=FriendAccount</div></pre></td></tr></table></figure>
-<p>转账成功后，我开始浏览某论坛。某帖子有一个评论附了一张照片，我好奇地点击了照片，不料中招，链接地址是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;img src=&quot;https://bank.cn/withdraw?account=sjyuan&amp;amount=1000&amp;for=HackerAccount&quot;&gt;</div></pre></td></tr></table></figure>
-<p>假如我恰好账户里有1000以上的存款.可能就会成功给黑客转账1000元…..god</p>
-<p>你可能会纳闷，为什么这个转账操作会被服务器接受呢？</p>
-<p>首先，黑客没有强制我去做什么，他也没法获取我从服务器上所获取的信息，他做的事情是向我访问的网站域名发出一个GET请求，而该请求会自动附上浏览器中该域（bank.cn）对应Cookie中的用户身份认证信息（Session未过期），所以服务器认为这是一个认证过的用户请求。更糟糕的是，服务器上没有留下黑客的任何非法攻击痕迹（当然收款方账号可能留下了技术之外的脚印），因为服务器认为该请求是我发起的。</p>
-<p>上述只是为了叙述原理，简化了银行这边的校验。实际上，一般都会由reffer的ip地址校验，一般也不会用get请求来明文发支付相关的操作。</p>
-<p>防御措施</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">上述可以看出，核心的问题在与：服务器缺乏除了cookie之外的认证机制。</div></pre></td></tr></table></figure>
-<p>所以如果我们从技术角度上防御CSRF攻击，主要有2个出发点</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1. 增加额外的校验机制来加强cookie认证。</div><div class="line">2. 控制好技术规范，正确使用HTTP动作。</div><div class="line">3. 摒弃检验Cookie中的用户身份信息的机制，采用token，比如JWT。</div></pre></td></tr></table></figure>
-<p>在展开讨论方案之前，我们先来剖析CSRF核心攻击点。用户对系统的使用，无非就是对服务器资源的CRUD（Create, Retrive, Update, Delete），由于R操作不会涉及到数据的更改，所以服务器要做的是防御客户端的CUD请求。而CSRF攻击正是黑客利用用户的Cookie信息伪造用户的CUD请求。所以我们要增加黑客无法盗用的东西，比如保存在Cookie之外的Token。</p>
-<p>常用解决方案：增加额外校验机制，引入token</p>
-<p>关于增加额外的校验机制，经典的做法是基于HTTP请求动作添加CSRF Token，即在请求参数或者Header中添加额外的Token</p>
-<p>服务器首先会生成一个Token保存在Session中，然后返回客户端。客户端在提交CUD请求的时候附带Token，服务会从Session中取出Token与请求中的Token进行比对校验。</p>
-<p>Spring security默认就启用了CSRF防御机制。如果我们发起的请求(POST, PUT, PATCH, DELETE)中没有携带任何CSRF的Token，服务器便会阻止请求：</p>
-<p>如何附加token呢？</p>
-<p>懒一点的话，直接在template渲染的时候，把token渲染到form里的隐藏域中。<br>最好的方式当然是通过Javascript脚本来添加token</p>
-<p>另外的一种做法是HTTP header 中的 Referer</p>
-<p>Referer字段主要记录了该HTTP请求的来源地址，那么在转账案件中，黑客模拟我发起转账的请求Header的Referer值就不是我所访问的银行网站的域名。服务器便可以拒绝该请求。</p>
-<p>这种方案是否可靠取决于浏览器厂商的实现是否有安全漏洞，比如IE6的referer是可以被篡改的。<br>另外用户可能因为该机制会记录下访问来源而设置浏览器不再提供referer的值。这会导致正常用户请求也会被服务器拒绝。</p>
-<p>作为开发者，应当遵守常规的HTTP规范，尤其当团队采用</p>
-<h3 id="XSS-Cross-site-scripting"><a href="#XSS-Cross-site-scripting" class="headerlink" title="XSS(Cross-site scripting):"></a><code>XSS</code>(Cross-site scripting):</h3><p>XSS攻击方式：</p>
-<ul>
-<li>反射型</li>
-</ul>
-<p>发出请求时，xss代码出现在url中，作为输入提交到服务器中，服务器解析后响应，xss代码随响应一起传回给浏览器，最后浏览器解析xss代码。这个过程就叫做一次反射。故称为反射型xss</p>
-<p>具体实现方式例子：</p>
-<p>get请求上url参数添加为’?param=<img src="null" onerror="alert(1)">‘</p>
-<p>当url中参数加载解析图片时，因为图片的地址为null，则会触发onerror事件，这时候就会解析onerror里面的代码。alert（1）只是一种示范，<br>实际上很有可能就是一段攻击代码，被浏览器成功执行</p>
-<p>防范措施：</p>
-<p>1.编码处理</p>
-<p>服务器部分接口可以过滤排除掉&lt; 、&gt; 、&amp;等字符，或者进行转义。</p>
-<p>2.过滤属性</p>
-<p>联系一下我们是如何引用js的，一般也就是通过src、script。所以，当服务器模板渲染数据、或ajax回传的数据我们可以过滤掉iframe、script、src、style等标签和属性、同时过滤掉onClick等监听事件的dom属性。</p>
-<p>如果是服务器渲染一次性推过来，那么就在服务器端渲染前，将模板数据进行dom parse、解码、过滤等操作。如果是ajax，就在前端做。</p>
-<p>推荐库：HTML parse。</p>
-<ul>
-<li>存储型</li>
-</ul>
-<p>……</p>
+        <h3 id="fetch-简单介绍"><a href="#fetch-简单介绍" class="headerlink" title="fetch 简单介绍"></a>fetch 简单介绍</h3><p>选自：<code>MDN</code> <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API</a></p>
+<p>Fetch API提供了一个获取资源的接口(包括跨网络)。可以看做是<code>XMLHttpRequest</code>的替代品</p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><img src="./img/code-3.png" alt="兼容性"></p>
+<h3 id="fetch-API"><a href="#fetch-API" class="headerlink" title="fetch API"></a>fetch API</h3><p><strong>语法</strong></p>
+<blockquote> Promise | Response fetch(input[, init]);</blockquote>
 
+<p>init<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalFetch/fetch" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/GlobalFetch/fetch</a></p>
+<h3 id="基本概念及用法"><a href="#基本概念及用法" class="headerlink" title="基本概念及用法"></a>基本概念及用法</h3><p>Fetch 提供了对Request和Response对象的通用定义，可以结合<code>service worker</code> 、<code>Cache API</code>、又或是自定义的响应方式。</p>
+<p>Fetch 提供了一个Javascript接口，用来访问和操纵HTTP管道部分。提供了全局的<code>fetch</code>方法<br>,相比于XML，他可以结合CORS进行跨域</p>
+<p><strong>fetch默认情况下不会从服务端发送或接受任何cookies</strong>，如果站点依赖用户session，会导致未经认证的请求。（要发送 cookies，必须设置 credentials 选项）</p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> myImage = <span class="built_in">document</span>.querySelector(<span class="string">'img'</span>);</div><div class="line"></div><div class="line">fetch(<span class="string">'flowers.jpg'</span>)</div><div class="line"><span class="comment">// fetch接受一个请求地址，返回一个response的promise对象</span></div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="comment">// 通过blob拿到二进制内容</span></div><div class="line">    <span class="keyword">return</span> response.blob();</div><div class="line">&#125;)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">myBlob</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> objectURL = URL.createObjectURL(myBlob);</div><div class="line">    myImage.src = objectURL;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>请求参数</strong><br><code>Fetch</code>接受第二个参数，一个可以控制的init的对象</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 生成一个http头</span></div><div class="line"><span class="keyword">var</span> myHeaders = <span class="keyword">new</span> Headers();</div><div class="line"></div><div class="line"><span class="keyword">var</span> myInit = &#123; <span class="attr">method</span>: <span class="string">'GET'</span>,</div><div class="line">               headers: myHeaders, <span class="comment">//请求头</span></div><div class="line">               mode: <span class="string">'cors'</span>,</div><div class="line">               cache: <span class="string">'default'</span> &#125;;</div><div class="line"></div><div class="line">fetch(<span class="string">'flowers.jpg'</span>,myInit)</div><div class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> response.blob();</div><div class="line">    &#125;)</div><div class="line">    .then(<span class="function"><span class="keyword">function</span>(<span class="params">myBlob</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> objectURL = URL.createObjectURL(myBlob);</div><div class="line">        myImage.src = objectURL;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<p><strong>检测请求是否成功</strong></p>
+<p>如果遇到网络故障，<code>fetch()</code>promise会带上reject。生成一个<code>TypeError</code>对象。可以通过<code>catch</code>拿到</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">fetch(<span class="string">'flowers.jpg'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(response.ok) &#123;</div><div class="line">    response.blob().then(<span class="function"><span class="keyword">function</span>(<span class="params">myBlob</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> objectURL = URL.createObjectURL(myBlob);</div><div class="line">      myImage.src = objectURL;</div><div class="line">    &#125;);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Network response was not ok.'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'There has been a problem with your fetch operation: '</span> + error.message);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="实战操作，将后台登陆模块替换为fetch"><a href="#实战操作，将后台登陆模块替换为fetch" class="headerlink" title="实战操作，将后台登陆模块替换为fetch"></a>实战操作，将后台登陆模块替换为fetch</h2><p>将目前公司后台登陆校验相关的逻辑用promise+fetch重构了一下</p>
+<p>顺便记录一下爬坑心得</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 注意，fetch默认是不携带cookie的，如果不配置credentials,就无法拿到cookies，所以一直登陆不上去</span></div><div class="line">fetch(me.Api.SigninUrl, &#123;</div><div class="line">        method: <span class="string">'POST'</span>,</div><div class="line">        headers: &#123;</div><div class="line">            <span class="comment">// 注意头部必须加上这个，才能确保参数正确传输到服务器端。默认的头不是这个</span></div><div class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></div><div class="line">        &#125;,</div><div class="line">        credentials: <span class="string">"include"</span>,</div><div class="line">        body: me.$form.serialize(),</div><div class="line">    &#125;)</div><div class="line">    .then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">        <span class="comment">// 这边拿到是原始response对象，方便我们这边做错误捕捉</span></div><div class="line">        <span class="keyword">if</span> (response.ok &amp;&amp; response.status === <span class="number">200</span>) &#123;</div><div class="line">            <span class="keyword">return</span> response.json()</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">let</span> status = data.Status</div><div class="line">        <span class="keyword">let</span> info = data.Data</div><div class="line"></div><div class="line">        me.updateCaptcha()</div><div class="line">        me.$submit.prop(<span class="string">'disabled'</span>, <span class="literal">false</span>).text(<span class="string">"登录"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (status === <span class="number">0</span> &amp;&amp; info.captcha) &#123;</div><div class="line">            toastr.error(me.message.captcha);</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (status === <span class="number">101</span>) &#123;</div><div class="line">            toastr.error(me.message.error)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (status === <span class="number">0</span> &amp;&amp; info.Id &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="comment">// 全部通过校验</span></div><div class="line">            me.redirectBack(info);</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(error)</div><div class="line">        toastr.error(me.message.server_err)</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -422,11 +390,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSRF/" rel="tag"># CSRF</a>
-          
-            <a href="/tags/XSS/" rel="tag"># XSS</a>
-          
-            <a href="/tags/web安全/" rel="tag"># web安全</a>
+            <a href="/tags/fetch/" rel="tag"># fetch</a>
           
         </div>
       
@@ -439,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/07/hexo-2017-11-7/" rel="next" title="关于hexo无法上传到github 的解决办法">
-                <i class="fa fa-chevron-left"></i> 关于hexo无法上传到github 的解决办法
+              <a href="/2017/11/13/reg-2017-11-13/" rel="next" title="正则的查漏补缺">
+                <i class="fa fa-chevron-left"></i> 正则的查漏补缺
               </a>
             
           </div>
@@ -448,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/13/resume-2017-11-13/" rel="prev" title="11月13日，杂食堆小记">
-                11月13日，杂食堆小记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-安全"><span class="nav-number">1.</span> <span class="nav-text">Web 安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF-Cross-site-request-forgery-伪造"><span class="nav-number">1.1.</span> <span class="nav-text">CSRF(Cross-site request forgery[伪造]):</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体操作原理："><span class="nav-number">1.1.1.</span> <span class="nav-text">具体操作原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#场景还原"><span class="nav-number">1.1.2.</span> <span class="nav-text">场景还原</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS-Cross-site-scripting"><span class="nav-number">1.2.</span> <span class="nav-text">XSS(Cross-site scripting):</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#fetch-简单介绍"><span class="nav-number">1.</span> <span class="nav-text">fetch 简单介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">2.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fetch-API"><span class="nav-number">3.</span> <span class="nav-text">fetch API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念及用法"><span class="nav-number">4.</span> <span class="nav-text">基本概念及用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战操作，将后台登陆模块替换为fetch"><span class="nav-number"></span> <span class="nav-text">实战操作，将后台登陆模块替换为fetch</span></a></div>
             
 
           </div>

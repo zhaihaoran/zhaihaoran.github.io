@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="kabulu | 杂食堆">
 <meta property="og:description" content="\b 表示单词边界，比如我想在一段话中精确找到单词im，或我想找eng结尾的所有单词，这时候就可以通过单词边界进行匹配。/\bim\b/ /\w+eng\b/g  构造函数中new RegExp()中一定要记得对反斜线\进行转义,在javascript中反斜线本身就是特殊字符，使用需要转义   var reg = new RegExp(&apos;\\w+eng\\b&apos;,&apos;g&apos;) //undefined/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-13T16:19:02.064Z">
+<meta property="og:updated_time" content="2017-11-14T02:23:56.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则的查漏补缺">
 <meta name="twitter:description" content="\b 表示单词边界，比如我想在一段话中精确找到单词im，或我想找eng结尾的所有单词，这时候就可以通过单词边界进行匹配。/\bim\b/ /\w+eng\b/g  构造函数中new RegExp()中一定要记得对反斜线\进行转义,在javascript中反斜线本身就是特殊字符，使用需要转义   var reg = new RegExp(&apos;\\w+eng\\b&apos;,&apos;g&apos;) //undefined/">
@@ -370,7 +370,10 @@
   <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="string">"ByronCapser"</span>.replace(<span class="regexp">/Byron|Casper/g</span>,<span class="string">"X"</span>) <span class="comment">// XX</span></div><div class="line"><span class="string">"ByronsperByrCapser"</span>.replace(<span class="regexp">/Byr(on|Ca)sper/g</span>,<span class="string">"X"</span>) <span class="comment">// XX</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>反向引用，比如想把2015-12-25 变成 12/25/2015 如何实现</p>
-  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="string">"2015-12-25"</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>,<span class="string">"$2/$3/$1"</span>) <span class="comment">// "12/25/2015"</span></div><div class="line"><span class="comment">// $1,$2,$3可以捕获分组匹配的内容</span></div><div class="line"><span class="comment">// 如果不想捕获某个分组，只需要在分组内加上 ?: 就可以了  </span></div><div class="line"><span class="string">"2015-12-25"</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(?:\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>,<span class="string">"$2/$1"</span>) <span class="comment">// "25/2015"</span></div></pre></td></tr></table></figure></li>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="string">"2015-12-25"</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>,<span class="string">"$2/$3/$1"</span>) <span class="comment">// "12/25/2015"</span></div><div class="line"><span class="comment">// $1,$2,$3可以捕获分组匹配的内容</span></div><div class="line"><span class="comment">// 如果不想捕获某个分组，只需要在分组内加上 ?: 就可以了  </span></div><div class="line"><span class="string">"2015-12-25"</span>.replace(<span class="regexp">/(\d&#123;4&#125;)-(?:\d&#123;2&#125;)-(\d&#123;2&#125;)/g</span>,<span class="string">"$2/$1"</span>) <span class="comment">// "25/2015"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>split也可以用正则,比如如下的例子</p>
+  <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="string">"asd@lll.box*tem"</span>.split(<span class="regexp">/[@\.\*]/</span>) <span class="comment">//["asd","lll","box","tem"]</span></div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -411,6 +414,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/14/fetch-2017-11-14/" rel="prev" title="fetch 学习">
+                fetch 学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -484,7 +491,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -495,7 +502,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -506,7 +513,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
