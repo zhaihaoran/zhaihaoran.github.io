@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="CSRF,XSS,web安全," />
+  <meta name="keywords" content="Hexo, NexT, Javascript, React, Blog" />
 
 
 
@@ -79,20 +79,17 @@
 
 
 
-<meta name="description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
-<meta name="keywords" content="CSRF,XSS,web安全">
+<meta name="description" content="react next.js 学习预备知识目前渲染分为三种机制  后端渲染：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染 前端渲染：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑 同构渲染：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成  前端渲染相比">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSRF 与 XSS 的那些事">
-<meta property="og:url" content="http://yoursite.com/2017/11/10/xss-2017-11-10/index.html">
+<meta property="og:title" content="react-next">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/react-next/index.html">
 <meta property="og:site_name" content="kabulu | 杂食堆">
-<meta property="og:description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
+<meta property="og:description" content="react next.js 学习预备知识目前渲染分为三种机制  后端渲染：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染 前端渲染：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑 同构渲染：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成  前端渲染相比">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2017/11/10/xss-2017-11-10/null">
-<meta property="og:updated_time" content="2017-11-12T13:32:47.351Z">
+<meta property="og:updated_time" content="2017-11-28T09:05:21.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSRF 与 XSS 的那些事">
-<meta name="twitter:description" content="Web 安全CSRF(Cross-site request forgery[伪造]):全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作 具体操作原理：用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CS">
-<meta name="twitter:image" content="http://yoursite.com/2017/11/10/xss-2017-11-10/null">
+<meta name="twitter:title" content="react-next">
+<meta name="twitter:description" content="react next.js 学习预备知识目前渲染分为三种机制  后端渲染：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染 前端渲染：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑 同构渲染：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成  前端渲染相比">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/10/xss-2017-11-10/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/28/react-next/"/>
 
 
 
 
 
-  <title>CSRF 与 XSS 的那些事 | kabulu | 杂食堆</title>
+  <title>react-next | kabulu | 杂食堆</title>
   
 
 
@@ -265,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/xss-2017-11-10/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/react-next/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="卡布鲁司机">
@@ -282,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSRF 与 XSS 的那些事</h1>
+          <h1 class="post-title" itemprop="name headline">react-next</h1>
         
 
         <div class="post-meta">
@@ -294,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T14:36:07+08:00">
-                2017年 11月 10日
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T16:37:28+08:00">
+                2017年 11月 28日
               </time>
             
 
@@ -304,28 +301,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web安全/" itemprop="url" rel="index">
-                    <span itemprop="name">web安全</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -354,57 +329,30 @@
       
 
       
-        <h2 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h2><h3 id="CSRF-Cross-site-request-forgery-伪造"><a href="#CSRF-Cross-site-request-forgery-伪造" class="headerlink" title="CSRF(Cross-site request forgery[伪造]):"></a><code>CSRF</code>(Cross-site request forgery[伪造]):</h3><p>全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作</p>
-<h4 id="具体操作原理："><a href="#具体操作原理：" class="headerlink" title="具体操作原理："></a>具体操作原理：</h4><p>用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CSRF攻击的网站，该网站便会盗用用户当前浏览器的cookie来模拟用户想服务器发送请求，执行预谋的操作。</p>
-<blockquote><p>CSRF基于曹操 <code>挟天子以令诸侯</code> 的手段上做了 <code>创新</code>：挟天子以骗诸侯。</p>
-</blockquote>
-<p>这样的盗用能够生效，有两个前提条件</p>
-<p>1.用户没有登出当前网站，并且当前用户Session未过期。<br>2.用户受到的诱惑，真实打开了攻击网站</p>
-<p>上面说这么多还是太模糊了，直接上场景：</p>
-<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4><a id="more"></a>
-<p>下班后，手机没电关机之前的最后一个电话是我一朋友打来借钱的。无奈我只能打开Chrome，访问了某银行网站，好在我成功登录（手机接到验证码后便关机了）</p>
-<p>导航到转账页面，我输入好金额和对方账号，点击提交后，浏览器发起一个请求：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">GET https://bank.cn/withdraw?account=sjyuan&amp;amount=5000&amp;for=FriendAccount</div></pre></td></tr></table></figure>
-<p>转账成功后，我开始浏览某论坛。某帖子有一个评论附了一张照片，我好奇地点击了照片，不料中招，链接地址是：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;img src=&quot;https://bank.cn/withdraw?account=sjyuan&amp;amount=1000&amp;for=HackerAccount&quot;&gt;</div></pre></td></tr></table></figure>
-<p>假如我恰好账户里有1000以上的存款.可能就会成功给黑客转账1000元…..god</p>
-<p>你可能会纳闷，为什么这个转账操作会被服务器接受呢？</p>
-<p>首先，黑客没有强制我去做什么，他也没法获取我从服务器上所获取的信息，他做的事情是向我访问的网站域名发出一个GET请求，而该请求会自动附上浏览器中该域（bank.cn）对应Cookie中的用户身份认证信息（Session未过期），所以服务器认为这是一个认证过的用户请求。更糟糕的是，服务器上没有留下黑客的任何非法攻击痕迹（当然收款方账号可能留下了技术之外的脚印），因为服务器认为该请求是我发起的。</p>
-<p>上述只是为了叙述原理，简化了银行这边的校验。实际上，一般都会由reffer的ip地址校验，一般也不会用get请求来明文发支付相关的操作。</p>
-<p>防御措施</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">上述可以看出，核心的问题在与：服务器缺乏除了cookie之外的认证机制。</div></pre></td></tr></table></figure>
-<p>所以如果我们从技术角度上防御CSRF攻击，主要有2个出发点</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1. 增加额外的校验机制来加强cookie认证。</div><div class="line">2. 控制好技术规范，正确使用HTTP动作。</div><div class="line">3. 摒弃检验Cookie中的用户身份信息的机制，采用token，比如JWT。</div></pre></td></tr></table></figure>
-<p>在展开讨论方案之前，我们先来剖析CSRF核心攻击点。用户对系统的使用，无非就是对服务器资源的CRUD（Create, Retrive, Update, Delete），由于R操作不会涉及到数据的更改，所以服务器要做的是防御客户端的CUD请求。而CSRF攻击正是黑客利用用户的Cookie信息伪造用户的CUD请求。所以我们要增加黑客无法盗用的东西，比如保存在Cookie之外的Token。</p>
-<p>常用解决方案：增加额外校验机制，引入token</p>
-<p>关于增加额外的校验机制，经典的做法是基于HTTP请求动作添加CSRF Token，即在请求参数或者Header中添加额外的Token</p>
-<p>服务器首先会生成一个Token保存在Session中，然后返回客户端。客户端在提交CUD请求的时候附带Token，服务会从Session中取出Token与请求中的Token进行比对校验。</p>
-<p>Spring security默认就启用了CSRF防御机制。如果我们发起的请求(POST, PUT, PATCH, DELETE)中没有携带任何CSRF的Token，服务器便会阻止请求：</p>
-<p>如何附加token呢？</p>
-<p>懒一点的话，直接在template渲染的时候，把token渲染到form里的隐藏域中。<br>最好的方式当然是通过Javascript脚本来添加token</p>
-<p>另外的一种做法是HTTP header 中的 Referer</p>
-<p>Referer字段主要记录了该HTTP请求的来源地址，那么在转账案件中，黑客模拟我发起转账的请求Header的Referer值就不是我所访问的银行网站的域名。服务器便可以拒绝该请求。</p>
-<p>这种方案是否可靠取决于浏览器厂商的实现是否有安全漏洞，比如IE6的referer是可以被篡改的。<br>另外用户可能因为该机制会记录下访问来源而设置浏览器不再提供referer的值。这会导致正常用户请求也会被服务器拒绝。</p>
-<p>作为开发者，应当遵守常规的HTTP规范，尤其当团队采用</p>
-<h3 id="XSS-Cross-site-scripting"><a href="#XSS-Cross-site-scripting" class="headerlink" title="XSS(Cross-site scripting):"></a><code>XSS</code>(Cross-site scripting):</h3><p>XSS攻击方式：</p>
+        <h1 id="react-next-js-学习"><a href="#react-next-js-学习" class="headerlink" title="react next.js 学习"></a>react next.js 学习</h1><h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>目前渲染分为三种机制</p>
 <ul>
-<li>反射型</li>
+<li><strong>后端渲染</strong>：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染</li>
+<li><strong>前端渲染</strong>：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑</li>
+<li><strong>同构渲染</strong>：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成</li>
 </ul>
-<p>发出请求时，xss代码出现在url中，作为输入提交到服务器中，服务器解析后响应，xss代码随响应一起传回给浏览器，最后浏览器解析xss代码。这个过程就叫做一次反射。故称为反射型xss</p>
-<p>具体实现方式例子：</p>
-<p>get请求上url参数添加为’?param=<img src="null" onerror="alert(1)">‘</p>
-<p>当url中参数加载解析图片时，因为图片的地址为null，则会触发onerror事件，这时候就会解析onerror里面的代码。alert（1）只是一种示范，<br>实际上很有可能就是一段攻击代码，被浏览器成功执行</p>
-<p>防范措施：</p>
-<p>1.编码处理</p>
-<p>服务器部分接口可以过滤排除掉&lt; 、&gt; 、&amp;等字符，或者进行转义。</p>
-<p>2.过滤属性</p>
-<p>联系一下我们是如何引用js的，一般也就是通过src、script。所以，当服务器模板渲染数据、或ajax回传的数据我们可以过滤掉iframe、script、src、style等标签和属性、同时过滤掉onClick等监听事件的dom属性。</p>
-<p>如果是服务器渲染一次性推过来，那么就在服务器端渲染前，将模板数据进行dom parse、解码、过滤等操作。如果是ajax，就在前端做。</p>
-<p>推荐库：HTML parse。</p>
+<h4 id="前端渲染相比后端优劣势"><a href="#前端渲染相比后端优劣势" class="headerlink" title="前端渲染相比后端优劣势"></a>前端渲染相比后端优劣势</h4><h5 id="优势："><a href="#优势：" class="headerlink" title="优势："></a>优势：</h5><ul>
+<li>局域刷新，无需每次都进行完整页面请求</li>
+<li>富交互性，懒加载</li>
+<li>节约服务器成本。省电省钱，JS 支持 CDN 部署，且部署极其简单</li>
+<li>JS 一次学习，到处使用。可以用来开发 Web、Serve、Mobile、Desktop 类型的应用</li>
+</ul>
+<h5 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h5><ul>
+<li>首屏加载时间过长；如果不进行优化，首次加载需要加载一大堆css和js文件，会有较长白屏。体验较差</li>
+<li>不利于搜索引擎爬取内容（SEO）</li>
+</ul>
+<h4 id="同构渲染可以说汲取了两者的优势。是未来前端的方向"><a href="#同构渲染可以说汲取了两者的优势。是未来前端的方向" class="headerlink" title="同构渲染可以说汲取了两者的优势。是未来前端的方向"></a>同构渲染可以说汲取了两者的优势。是未来前端的方向</h4><h3 id="什么是nextjs"><a href="#什么是nextjs" class="headerlink" title="什么是nextjs"></a>什么是nextjs</h3><p>nextjs 是一个server端渲染react组件的开源库 想要了解它的原因是</p>
 <ul>
-<li>存储型</li>
+<li>寻找React的SEO的解决方案中，无意发现的</li>
+<li>star很多，维护很积极</li>
+<li>服务器端渲染道听途说多，有必要实际了解下</li>
+<li>多学总没有坏处</li>
 </ul>
-<p>……</p>
+<h3 id="资料收集"><a href="#资料收集" class="headerlink" title="资料收集"></a>资料收集</h3><p><a href="http://sjy.github.io/2017/07/09/learn-next-js/" target="_blank" rel="external">http://sjy.github.io/2017/07/09/learn-next-js/</a><br><a href="https://github.com/camsong/blog/issues/8" target="_blank" rel="external">https://github.com/camsong/blog/issues/8</a></p>
 
       
     </div>
@@ -420,16 +368,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/CSRF/" rel="tag"># CSRF</a>
-          
-            <a href="/tags/XSS/" rel="tag"># XSS</a>
-          
-            <a href="/tags/web安全/" rel="tag"># web安全</a>
-          
-        </div>
-      
 
       
       
@@ -439,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/07/hexo-2017-11-7/" rel="next" title="关于hexo无法上传到github 的解决办法">
-                <i class="fa fa-chevron-left"></i> 关于hexo无法上传到github 的解决办法
+              <a href="/2017/11/17/面试经验/" rel="next" title="面试收获 --- 查遗补漏">
+                <i class="fa fa-chevron-left"></i> 面试收获 --- 查遗补漏
               </a>
             
           </div>
@@ -449,8 +387,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/13/resume-2017-11-13/" rel="prev" title="11月13日，杂食堆小记">
-                11月13日，杂食堆小记 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/30/nextjs-17-11-30/" rel="prev" title="React next 采坑攻略">
+                React next 采坑攻略 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -613,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-安全"><span class="nav-number">1.</span> <span class="nav-text">Web 安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF-Cross-site-request-forgery-伪造"><span class="nav-number">1.1.</span> <span class="nav-text">CSRF(Cross-site request forgery[伪造]):</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体操作原理："><span class="nav-number">1.1.1.</span> <span class="nav-text">具体操作原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#场景还原"><span class="nav-number">1.1.2.</span> <span class="nav-text">场景还原</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS-Cross-site-scripting"><span class="nav-number">1.2.</span> <span class="nav-text">XSS(Cross-site scripting):</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#react-next-js-学习"><span class="nav-number">1.</span> <span class="nav-text">react next.js 学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预备知识"><span class="nav-number">1.0.1.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前端渲染相比后端优劣势"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">前端渲染相比后端优劣势</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优势："><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#劣势"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">劣势</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同构渲染可以说汲取了两者的优势。是未来前端的方向"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">同构渲染可以说汲取了两者的优势。是未来前端的方向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是nextjs"><span class="nav-number">1.0.2.</span> <span class="nav-text">什么是nextjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资料收集"><span class="nav-number">1.0.3.</span> <span class="nav-text">资料收集</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
