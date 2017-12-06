@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT, Javascript, React, Blog" />
+  <meta name="keywords" content="同构,React,Koa,杂食堆," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="react next.js 学习预备知识目前渲染分为三种机制  后端渲染：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染 前端渲染：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑 同构渲染：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成  前端渲染相比">
+<meta name="description" content="好久没写博客了，坚持写博客真的是一件很辛苦的事情。因为总是会有各种各样的事情耽搁，真的是很佩服阮一峰和廖雪峰老师，能够坚持更新博客，日复一日。平时其实笔记随手记得还是很多的，但要统一整理到博客上，并且写出一篇好的博客，真的需要大量的时间和资料去支持，加上深刻的理解。 唉，但愿我也能坚持的久一点。 1. 渲染原理分析与对比： fer &amp;amp; ssr &amp;amp; 同构 fer：浏览器请求url，传">
+<meta name="keywords" content="同构,React,Koa,杂食堆">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-next">
-<meta property="og:url" content="http://yoursite.com/2017/11/28/react-next/index.html">
+<meta property="og:title" content="nextjs 框架学习与实战">
+<meta property="og:url" content="http://yoursite.com/2017/12/05/nextjs-2017-12-6/index.html">
 <meta property="og:site_name" content="kabulu | 杂食堆">
-<meta property="og:description" content="react next.js 学习预备知识目前渲染分为三种机制  后端渲染：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染 前端渲染：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑 同构渲染：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成  前端渲染相比">
+<meta property="og:description" content="好久没写博客了，坚持写博客真的是一件很辛苦的事情。因为总是会有各种各样的事情耽搁，真的是很佩服阮一峰和廖雪峰老师，能够坚持更新博客，日复一日。平时其实笔记随手记得还是很多的，但要统一整理到博客上，并且写出一篇好的博客，真的需要大量的时间和资料去支持，加上深刻的理解。 唉，但愿我也能坚持的久一点。 1. 渲染原理分析与对比： fer &amp;amp; ssr &amp;amp; 同构 fer：浏览器请求url，传">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-28T09:05:21.734Z">
+<meta property="og:updated_time" content="2017-12-06T13:57:32.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-next">
-<meta name="twitter:description" content="react next.js 学习预备知识目前渲染分为三种机制  后端渲染：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染 前端渲染：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑 同构渲染：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成  前端渲染相比">
+<meta name="twitter:title" content="nextjs 框架学习与实战">
+<meta name="twitter:description" content="好久没写博客了，坚持写博客真的是一件很辛苦的事情。因为总是会有各种各样的事情耽搁，真的是很佩服阮一峰和廖雪峰老师，能够坚持更新博客，日复一日。平时其实笔记随手记得还是很多的，但要统一整理到博客上，并且写出一篇好的博客，真的需要大量的时间和资料去支持，加上深刻的理解。 唉，但愿我也能坚持的久一点。 1. 渲染原理分析与对比： fer &amp;amp; ssr &amp;amp; 同构 fer：浏览器请求url，传">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/28/react-next/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/05/nextjs-2017-12-6/"/>
 
 
 
 
 
-  <title>react-next | kabulu | 杂食堆</title>
+  <title>nextjs 框架学习与实战 | kabulu | 杂食堆</title>
   
 
 
@@ -262,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/28/react-next/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/nextjs-2017-12-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="卡布鲁司机">
@@ -279,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">react-next</h1>
+          <h1 class="post-title" itemprop="name headline">nextjs 框架学习与实战</h1>
         
 
         <div class="post-meta">
@@ -291,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T16:37:28+08:00">
-                2017年 11月 28日
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T21:14:16+08:00">
+                2017年 12月 5日
               </time>
             
 
@@ -329,30 +330,65 @@
       
 
       
-        <h1 id="react-next-js-学习"><a href="#react-next-js-学习" class="headerlink" title="react next.js 学习"></a>react next.js 学习</h1><h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>目前渲染分为三种机制</p>
+        <p>好久没写博客了，坚持写博客真的是一件很辛苦的事情。因为总是会有各种各样的事情耽搁，真的是很佩服阮一峰和廖雪峰老师，能够坚持更新博客，日复一日。平时其实笔记随手记得还是很多的，但要统一整理到博客上，并且写出一篇好的博客，真的需要大量的时间和资料去支持，加上深刻的理解。</p>
+<p>唉，但愿我也能坚持的久一点。</p>
+<h3 id="1-渲染原理分析与对比：-fer-amp-ssr-amp-同构"><a href="#1-渲染原理分析与对比：-fer-amp-ssr-amp-同构" class="headerlink" title="1. 渲染原理分析与对比： fer &amp; ssr &amp; 同构"></a>1. 渲染原理分析与对比： fer &amp; ssr &amp; 同构</h3><ul>
+<li>fer：浏览器请求url，传给浏览器的页面只有一个backbone，数据获取一般通过ajax和fetch的方式，拿到后插入dom和需要的css，注入到需要渲染位置，最终生成完整页面。</li>
+<li>ssr：浏览器请求url，数据在服务器端就会塞给模板，生成完整的html和样式，然后推给浏览器，直接输出页面。</li>
+</ul>
+<p>fer的优势在于不用刷新页面，体验增强，但由于爬虫只会爬取第一次加载时的html，所以seo不友好，google据说可以爬js，但有墙的影响，本身用途也不大。第二个缺点是首屏时间过长，毕竟一口气加载一堆js和css肯定很慢。不过代码切割和动态载入可以弥补，后续会讲到<br>ssr的优势自然就是可以方便seo。缺点同上。</p>
+<p>同构本质上就是fer + ssr的结合体，流程是第一次访问页面时是服务器渲染，拿到的是完整html，之后的渲染全部是浏览器渲染，组件是通用的。基本上弥补了fer不能SEO的缺陷，目前知乎个人页就是同构的产品。</p>
+<h3 id="2-同构基础"><a href="#2-同构基础" class="headerlink" title="2. 同构基础"></a>2. 同构基础</h3><p>React 为了满足服务器渲染的要求，专门提供了对应的接口。这也是同构能够产生的根源。</p>
+<h5 id="React-renderToString"><a href="#React-renderToString" class="headerlink" title="React.renderToString"></a>React.renderToString</h5><p>把 React 元素转成一个 HTML 字符串，因为服务端渲染已经标识了 reactid，所以在浏览器端再次渲染，React 只是做事件绑定，而不会将所有的 DOM 树重新渲染，这样能带来高性能的页面首次加载！同构黑魔法主要从这个 API 而来</p>
+<p>#####React.renderToStaticMarkup</p>
+<p>相当于一个简化版的 renderToString，如果你的应用基本上是静态文本，建议用这个方法，少了一大批的 reactid，DOM 树自然精简了，在 IO 流传输上节省一部分流量。</p>
+<h3 id="3-实战nextjs"><a href="#3-实战nextjs" class="headerlink" title="3. 实战nextjs"></a>3. 实战nextjs</h3><p>文档资料：<a href="https://juejin.im/post/59f72fef518825569538ef5a#heading-24" target="_blank" rel="external">https://juejin.im/post/59f72fef518825569538ef5a#heading-24</a><br>项目实战：<a href="https://github.com/zhaihaoran/next-admin-demo" target="_blank" rel="external">next-demo</a></p>
+<p>东西太多太杂了，直接看代码是最快的（懒得整理了）</p>
+<h3 id="4-杂食堆-–-爬坑留念"><a href="#4-杂食堆-–-爬坑留念" class="headerlink" title="4. 杂食堆 – 爬坑留念"></a>4. 杂食堆 – 爬坑留念</h3><ol>
+<li>history 缺漏</li>
+</ol>
+<p>router.push 相当于浏览器前进，保留历史记录，可以后退回来<br>router.replace 相当于url替换，是没有记录的，无法后退回来</p>
+<ol>
+<li>decorator 装饰器\适配器</li>
+</ol>
+<p>es7的黑魔法，js常用的装饰者模式的封装，也叫AOP。<br>应用：Mobx里observer模式,服务器端logger实现。<br>资料：<a href="http://taobaofed.org/blog/2015/11/16/es7-decorator/" target="_blank" rel="external">http://taobaofed.org/blog/2015/11/16/es7-decorator/</a></p>
+<ol>
+<li><p>fetch 竟然不支持IE11，操蛋啊</p>
+</li>
+<li><p>Mock 假数据，Mock.js + pure。 </p>
+</li>
+</ol>
+<p>最初是通过拦截ajax提供数据。如果结合pure，可以尝试构建mockserver搭建<br>完美构造假数据，容易上手，方便替换。</p>
+<ol>
+<li>VSCODE的JSON的智能提示，是通过JSON schema实现的</li>
+</ol>
+<p>JSON schema 可以用来验证格式，并提供一些提示信息。</p>
+<ol>
+<li>nodejs与其他语言配合有2种方式：</li>
+</ol>
 <ul>
-<li><strong>后端渲染</strong>：php、ASP、Java等等，由服务器处理bolierplate然后一次吐给浏览器进行渲染</li>
-<li><strong>前端渲染</strong>：SPA应用，三大框架。由JS控制浏览器渲染机制，后端只负责model和model处理的逻辑</li>
-<li><strong>同构渲染</strong>：简单来说，就是两者的混合体，前后端共用js,首次渲染使用nodejs直出HTML，其他渲染均有JS控制完成</li>
+<li>通过http或tcp协议，进行数据交换。就是通过ajax访问接口。</li>
+<li>通过c++拓展调用，node-gyp是用来编译原生C++模块的，有很多包要跨平台使用，基本都是通过node-gyp进行编译实现。</li>
 </ul>
-<h4 id="前端渲染相比后端优劣势"><a href="#前端渲染相比后端优劣势" class="headerlink" title="前端渲染相比后端优劣势"></a>前端渲染相比后端优劣势</h4><h5 id="优势："><a href="#优势：" class="headerlink" title="优势："></a>优势：</h5><ul>
-<li>局域刷新，无需每次都进行完整页面请求</li>
-<li>富交互性，懒加载</li>
-<li>节约服务器成本。省电省钱，JS 支持 CDN 部署，且部署极其简单</li>
-<li>JS 一次学习，到处使用。可以用来开发 Web、Serve、Mobile、Desktop 类型的应用</li>
-</ul>
-<h5 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h5><ul>
-<li>首屏加载时间过长；如果不进行优化，首次加载需要加载一大堆css和js文件，会有较长白屏。体验较差</li>
-<li>不利于搜索引擎爬取内容（SEO）</li>
-</ul>
-<h4 id="同构渲染可以说汲取了两者的优势。是未来前端的方向"><a href="#同构渲染可以说汲取了两者的优势。是未来前端的方向" class="headerlink" title="同构渲染可以说汲取了两者的优势。是未来前端的方向"></a>同构渲染可以说汲取了两者的优势。是未来前端的方向</h4><h3 id="什么是nextjs"><a href="#什么是nextjs" class="headerlink" title="什么是nextjs"></a>什么是nextjs</h3><p>nextjs 是一个server端渲染react组件的开源库 想要了解它的原因是</p>
+<ol>
+<li>es6 查遗补漏 — 参见MDN</li>
+</ol>
+<p>find — 返回符合测试函数的第一个元素值<br>findIndex — 返回符合测试函数的第一个元素索引<br>includes — 查看数据是否包含某个值。<br>every —- 对数组整体进行判断，如果有一个值不符合要求则返回false，全部通过才返回true</p>
+<ol>
+<li>给package.json 上锁</li>
+</ol>
 <ul>
-<li>寻找React的SEO的解决方案中，无意发现的</li>
-<li>star很多，维护很积极</li>
-<li>服务器端渲染道听途说多，有必要实际了解下</li>
-<li>多学总没有坏处</li>
+<li>npm install –save-exact/-E</li>
 </ul>
-<h3 id="资料收集"><a href="#资料收集" class="headerlink" title="资料收集"></a>资料收集</h3><p><a href="http://sjy.github.io/2017/07/09/learn-next-js/" target="_blank" rel="external">http://sjy.github.io/2017/07/09/learn-next-js/</a><br><a href="https://github.com/camsong/blog/issues/8" target="_blank" rel="external">https://github.com/camsong/blog/issues/8</a></p>
+<p>–save-exact/-E参数强制npm在package.json中写死固定的版本号，而不使用如~，^这类的范围符号</p>
+<ul>
+<li>npm shrinkwrap</li>
+</ul>
+<p>npm shrinkwrap命令会在项目路径下创建一个npm-shrinkwrap.json文件。该文件中包含了当前项目中所有依赖包的版本信息。把该文件提交到git中。其他人在clone该项目执行npm install时，npm检测到该文件后会按照文件中的信息完整的还原出完全相同的依赖树。从而解决版本不一致问题</p>
+<ul>
+<li>yarn </li>
+</ul>
+<p>直接yarn即可，自动生成yarn.lock文件，包含了当前项目中所安装的依赖包的版本信息。唯一的缺点就是其他人想要获得相同环境也要通过yarn安装。</p>
 
       
     </div>
@@ -368,6 +404,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/同构-React-Koa-杂食堆/" rel="tag"># 同构,React,Koa,杂食堆</a>
+          
+        </div>
+      
 
       
       
@@ -377,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/17/面试经验/" rel="next" title="面试收获 --- 查遗补漏">
-                <i class="fa fa-chevron-left"></i> 面试收获 --- 查遗补漏
+              <a href="/2017/11/30/nextjs-17-11-30/" rel="next" title="React next 采坑攻略">
+                <i class="fa fa-chevron-left"></i> React next 采坑攻略
               </a>
             
           </div>
@@ -386,10 +428,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/30/nextjs-17-11-30/" rel="prev" title="React next 采坑攻略">
-                React next 采坑攻略 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -551,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#react-next-js-学习"><span class="nav-number">1.</span> <span class="nav-text">react next.js 学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预备知识"><span class="nav-number">1.0.1.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前端渲染相比后端优劣势"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">前端渲染相比后端优劣势</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#优势："><span class="nav-number">1.0.1.1.1.</span> <span class="nav-text">优势：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#劣势"><span class="nav-number">1.0.1.1.2.</span> <span class="nav-text">劣势</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同构渲染可以说汲取了两者的优势。是未来前端的方向"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">同构渲染可以说汲取了两者的优势。是未来前端的方向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是nextjs"><span class="nav-number">1.0.2.</span> <span class="nav-text">什么是nextjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资料收集"><span class="nav-number">1.0.3.</span> <span class="nav-text">资料收集</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-渲染原理分析与对比：-fer-amp-ssr-amp-同构"><span class="nav-number">1.</span> <span class="nav-text">1. 渲染原理分析与对比： fer & ssr & 同构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-同构基础"><span class="nav-number">2.</span> <span class="nav-text">2. 同构基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#React-renderToString"><span class="nav-number">2.0.1.</span> <span class="nav-text">React.renderToString</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-实战nextjs"><span class="nav-number">3.</span> <span class="nav-text">3. 实战nextjs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-杂食堆-–-爬坑留念"><span class="nav-number">4.</span> <span class="nav-text">4. 杂食堆 – 爬坑留念</span></a></li></ol></div>
             
 
           </div>

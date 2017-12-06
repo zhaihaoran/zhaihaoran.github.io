@@ -262,6 +262,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/xss-2017-11-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="卡布鲁司机">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kabulu | 杂食堆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/10/xss-2017-11-10/" itemprop="url">CSRF 与 XSS 的那些事</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T14:36:07+08:00">
+                2017年 11月 10日
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">web安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Web-安全"><a href="#Web-安全" class="headerlink" title="Web 安全"></a>Web 安全</h2><h3 id="CSRF-Cross-site-request-forgery-伪造"><a href="#CSRF-Cross-site-request-forgery-伪造" class="headerlink" title="CSRF(Cross-site request forgery[伪造]):"></a><code>CSRF</code>(Cross-site request forgery[伪造]):</h3><p>全称为跨站请求伪造，一句话概述该攻击手法：盗用用户的身份认证信息在用户当前已登录的Web应用程序上执行非用户本意的操作</p>
+<h4 id="具体操作原理："><a href="#具体操作原理：" class="headerlink" title="具体操作原理："></a>具体操作原理：</h4><p>用户登录之后，服务器会将用户身份认证信息（用户Session）保存在用户浏览器的cookie中。如果当前用户没有登出，而恰巧又在Session过期之前受到诱惑后访问了一个潜伏着CSRF攻击的网站，该网站便会盗用用户当前浏览器的cookie来模拟用户想服务器发送请求，执行预谋的操作。</p>
+<blockquote><p>CSRF基于曹操 <code>挟天子以令诸侯</code> 的手段上做了 <code>创新</code>：挟天子以骗诸侯。</p>
+</blockquote>
+<p>这样的盗用能够生效，有两个前提条件</p>
+<p>1.用户没有登出当前网站，并且当前用户Session未过期。<br>2.用户受到的诱惑，真实打开了攻击网站</p>
+<p>上面说这么多还是太模糊了，直接上场景：</p>
+<h4 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h4>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/10/xss-2017-11-10/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/hexo-2017-11-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1217,7 +1370,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1239,7 +1392,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
